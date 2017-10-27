@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		646F95D51F5C6589007687DF /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646F95D41F5C6589007687DF /* Sign.swift */; };
+		6478C8591F5B2B140035D67A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6478C8581F5B2B140035D67A /* AppDelegate.swift */; };
+		6478C85B1F5B2B140035D67A /* SignsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6478C85A1F5B2B140035D67A /* SignsCollectionViewController.swift */; };
+		6478C85E1F5B2B140035D67A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6478C85C1F5B2B140035D67A /* Main.storyboard */; };
+		6478C8601F5B2B140035D67A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6478C85F1F5B2B140035D67A /* Assets.xcassets */; };
+		6478C8631F5B2B140035D67A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6478C8611F5B2B140035D67A /* LaunchScreen.storyboard */; };
+		6490BF8D1F6430F20071CED3 /* SignPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF8C1F6430F20071CED3 /* SignPreviewViewController.swift */; };
+		6490BF901F6431390071CED3 /* SignDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF8F1F6431390071CED3 /* SignDetailedViewController.swift */; };
+		6490BF921F64350C0071CED3 /* SignCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF911F64350C0071CED3 /* SignCollectionViewCell.swift */; };
+		6490BF951F6436500071CED3 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF941F6436500071CED3 /* NavigationViewController.swift */; };
+		6490BF981F6441950071CED3 /* SignFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF971F6441950071CED3 /* SignFactory.swift */; };
+		6490BF9B1F644E510071CED3 /* SignProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF9A1F644E510071CED3 /* SignProtocol.swift */; };
+		6490BF9D1F6482640071CED3 /* SignDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF9C1F6482640071CED3 /* SignDefinition.swift */; };
+		8A2EF07BF980C7A773661AE0 /* Pods_Horoscop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AD48DA1CDEF473BDA13188 /* Pods_Horoscop.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0E718F62E8818F551C99F648 /* Pods-Horoscop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Horoscop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Horoscop/Pods-Horoscop.debug.xcconfig"; sourceTree = "<group>"; };
+		646F95D41F5C6589007687DF /* Sign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
+		6478C8551F5B2B140035D67A /* Horoscop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Horoscop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6478C8581F5B2B140035D67A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6478C85A1F5B2B140035D67A /* SignsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignsCollectionViewController.swift; sourceTree = "<group>"; };
+		6478C85D1F5B2B140035D67A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6478C85F1F5B2B140035D67A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6478C8621F5B2B140035D67A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6478C8641F5B2B140035D67A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6490BF8C1F6430F20071CED3 /* SignPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignPreviewViewController.swift; path = Views/SignPreviewViewController.swift; sourceTree = "<group>"; };
+		6490BF8F1F6431390071CED3 /* SignDetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignDetailedViewController.swift; sourceTree = "<group>"; };
+		6490BF911F64350C0071CED3 /* SignCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignCollectionViewCell.swift; path = Views/SignCell/SignCollectionViewCell.swift; sourceTree = "<group>"; };
+		6490BF941F6436500071CED3 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationViewController.swift; path = Navigation/NavigationViewController.swift; sourceTree = "<group>"; };
+		6490BF971F6441950071CED3 /* SignFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignFactory.swift; path = Model/SignFactory.swift; sourceTree = "<group>"; };
+		6490BF9A1F644E510071CED3 /* SignProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignProtocol.swift; path = Model/SignProtocol.swift; sourceTree = "<group>"; };
+		6490BF9C1F6482640071CED3 /* SignDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignDefinition.swift; sourceTree = "<group>"; };
+		7C4A97A680E019EA098A47CA /* Pods-Horoscop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Horoscop.release.xcconfig"; path = "Pods/Target Support Files/Pods-Horoscop/Pods-Horoscop.release.xcconfig"; sourceTree = "<group>"; };
+		C7AD48DA1CDEF473BDA13188 /* Pods_Horoscop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Horoscop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6478C8521F5B2B140035D67A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A2EF07BF980C7A773661AE0 /* Pods_Horoscop.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		012F550B13D91CF798161552 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C7AD48DA1CDEF473BDA13188 /* Pods_Horoscop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6478C84C1F5B2B140035D67A = {
+			isa = PBXGroup;
+			children = (
+				6478C8571F5B2B140035D67A /* Horoscop */,
+				6478C8561F5B2B140035D67A /* Products */,
+				8F2B5C12056C8C8E90780715 /* Pods */,
+				012F550B13D91CF798161552 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6478C8561F5B2B140035D67A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6478C8551F5B2B140035D67A /* Horoscop.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6478C8571F5B2B140035D67A /* Horoscop */ = {
+			isa = PBXGroup;
+			children = (
+				6490BF991F64419A0071CED3 /* Model */,
+				6490BF961F6436540071CED3 /* Navigation */,
+				6490BF8E1F64310A0071CED3 /* Views */,
+				6478C8581F5B2B140035D67A /* AppDelegate.swift */,
+				6478C85C1F5B2B140035D67A /* Main.storyboard */,
+				6478C85F1F5B2B140035D67A /* Assets.xcassets */,
+				6478C8611F5B2B140035D67A /* LaunchScreen.storyboard */,
+				6478C8641F5B2B140035D67A /* Info.plist */,
+			);
+			path = Horoscop;
+			sourceTree = "<group>";
+		};
+		6490BF8E1F64310A0071CED3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6490BF931F6435110071CED3 /* SignCell */,
+				6478C85A1F5B2B140035D67A /* SignsCollectionViewController.swift */,
+				6490BF8C1F6430F20071CED3 /* SignPreviewViewController.swift */,
+				6490BF8F1F6431390071CED3 /* SignDetailedViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		6490BF931F6435110071CED3 /* SignCell */ = {
+			isa = PBXGroup;
+			children = (
+				6490BF911F64350C0071CED3 /* SignCollectionViewCell.swift */,
+			);
+			name = SignCell;
+			sourceTree = "<group>";
+		};
+		6490BF961F6436540071CED3 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				6490BF941F6436500071CED3 /* NavigationViewController.swift */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
+		6490BF991F64419A0071CED3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				646F95D41F5C6589007687DF /* Sign.swift */,
+				6490BF971F6441950071CED3 /* SignFactory.swift */,
+				6490BF9A1F644E510071CED3 /* SignProtocol.swift */,
+				6490BF9C1F6482640071CED3 /* SignDefinition.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8F2B5C12056C8C8E90780715 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E718F62E8818F551C99F648 /* Pods-Horoscop.debug.xcconfig */,
+				7C4A97A680E019EA098A47CA /* Pods-Horoscop.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6478C8541F5B2B140035D67A /* Horoscop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6478C8671F5B2B140035D67A /* Build configuration list for PBXNativeTarget "Horoscop" */;
+			buildPhases = (
+				E71846253A4AE937D40FC8A1 /* [CP] Check Pods Manifest.lock */,
+				6478C8511F5B2B140035D67A /* Sources */,
+				6478C8521F5B2B140035D67A /* Frameworks */,
+				6478C8531F5B2B140035D67A /* Resources */,
+				6C94047E8FCF317EBE3E6246 /* [CP] Embed Pods Frameworks */,
+				874EFDAE4403BE4B58C56CCB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Horoscop;
+			productName = Horoscop;
+			productReference = 6478C8551F5B2B140035D67A /* Horoscop.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6478C84D1F5B2B140035D67A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Voicu Narcis";
+				TargetAttributes = {
+					6478C8541F5B2B140035D67A = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = H8Q62M33XE;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6478C8501F5B2B140035D67A /* Build configuration list for PBXProject "Horoscop" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6478C84C1F5B2B140035D67A;
+			productRefGroup = 6478C8561F5B2B140035D67A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6478C8541F5B2B140035D67A /* Horoscop */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6478C8531F5B2B140035D67A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6478C8631F5B2B140035D67A /* LaunchScreen.storyboard in Resources */,
+				6478C8601F5B2B140035D67A /* Assets.xcassets in Resources */,
+				6478C85E1F5B2B140035D67A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C94047E8FCF317EBE3E6246 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Horoscop/Pods-Horoscop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		874EFDAE4403BE4B58C56CCB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Horoscop/Pods-Horoscop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E71846253A4AE937D40FC8A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6478C8511F5B2B140035D67A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6490BF8D1F6430F20071CED3 /* SignPreviewViewController.swift in Sources */,
+				6490BF9B1F644E510071CED3 /* SignProtocol.swift in Sources */,
+				646F95D51F5C6589007687DF /* Sign.swift in Sources */,
+				6478C85B1F5B2B140035D67A /* SignsCollectionViewController.swift in Sources */,
+				6490BF921F64350C0071CED3 /* SignCollectionViewCell.swift in Sources */,
+				6490BF9D1F6482640071CED3 /* SignDefinition.swift in Sources */,
+				6490BF901F6431390071CED3 /* SignDetailedViewController.swift in Sources */,
+				6490BF981F6441950071CED3 /* SignFactory.swift in Sources */,
+				6490BF951F6436500071CED3 /* NavigationViewController.swift in Sources */,
+				6478C8591F5B2B140035D67A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6478C85C1F5B2B140035D67A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6478C85D1F5B2B140035D67A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6478C8611F5B2B140035D67A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6478C8621F5B2B140035D67A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6478C8651F5B2B140035D67A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6478C8661F5B2B140035D67A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6478C8681F5B2B140035D67A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E718F62E8818F551C99F648 /* Pods-Horoscop.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = H8Q62M33XE;
+				INFOPLIST_FILE = Horoscop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ro.narcis.Horoscop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6478C8691F5B2B140035D67A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C4A97A680E019EA098A47CA /* Pods-Horoscop.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = H8Q62M33XE;
+				INFOPLIST_FILE = Horoscop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ro.narcis.Horoscop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6478C8501F5B2B140035D67A /* Build configuration list for PBXProject "Horoscop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6478C8651F5B2B140035D67A /* Debug */,
+				6478C8661F5B2B140035D67A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6478C8671F5B2B140035D67A /* Build configuration list for PBXNativeTarget "Horoscop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6478C8681F5B2B140035D67A /* Debug */,
+				6478C8691F5B2B140035D67A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6478C84D1F5B2B140035D67A /* Project object */;
+}

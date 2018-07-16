@@ -14,13 +14,20 @@
 		6478C8601F5B2B140035D67A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6478C85F1F5B2B140035D67A /* Assets.xcassets */; };
 		6478C8631F5B2B140035D67A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6478C8611F5B2B140035D67A /* LaunchScreen.storyboard */; };
 		6490BF8D1F6430F20071CED3 /* SignPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF8C1F6430F20071CED3 /* SignPreviewViewController.swift */; };
-		6490BF901F6431390071CED3 /* SignDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF8F1F6431390071CED3 /* SignDetailedViewController.swift */; };
+		6490BF901F6431390071CED3 /* SignCompatibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF8F1F6431390071CED3 /* SignCompatibilityViewController.swift */; };
 		6490BF921F64350C0071CED3 /* SignCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF911F64350C0071CED3 /* SignCollectionViewCell.swift */; };
-		6490BF951F6436500071CED3 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF941F6436500071CED3 /* NavigationViewController.swift */; };
+		6490BF951F6436500071CED3 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF941F6436500071CED3 /* NavigationCoordinator.swift */; };
 		6490BF981F6441950071CED3 /* SignFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF971F6441950071CED3 /* SignFactory.swift */; };
 		6490BF9B1F644E510071CED3 /* SignProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF9A1F644E510071CED3 /* SignProtocol.swift */; };
 		6490BF9D1F6482640071CED3 /* SignDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF9C1F6482640071CED3 /* SignDefinition.swift */; };
 		8A2EF07BF980C7A773661AE0 /* Pods_Horoscop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AD48DA1CDEF473BDA13188 /* Pods_Horoscop.framework */; };
+		C11C0C1720F4E26D0020D834 /* SignDetailedWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11C0C1620F4E26D0020D834 /* SignDetailedWebViewController.swift */; };
+		C11FFE2C20F761D4008DA316 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11FFE2B20F761D4008DA316 /* StringFormatter.swift */; };
+		C11FFE2E20F79D8A008DA316 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11FFE2D20F79D8A008DA316 /* Constants.swift */; };
+		C168305820FD1E5F00DDEF71 /* SignCompatibilityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C168305720FD1E5F00DDEF71 /* SignCompatibilityTableViewCell.swift */; };
+		C192A60D20F8FFA200405AAB /* SignModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C192A60C20F8FFA200405AAB /* SignModel.swift */; };
+		C1BD4166200BEB5E0031BE23 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD4165200BEB5E0031BE23 /* Colors.swift */; };
+		C1BD4168200BF0230031BE23 /* SingleInstanceSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD4167200BF0230031BE23 /* SingleInstanceSign.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,13 +41,20 @@
 		6478C8621F5B2B140035D67A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6478C8641F5B2B140035D67A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6490BF8C1F6430F20071CED3 /* SignPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignPreviewViewController.swift; path = Views/SignPreviewViewController.swift; sourceTree = "<group>"; };
-		6490BF8F1F6431390071CED3 /* SignDetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignDetailedViewController.swift; sourceTree = "<group>"; };
-		6490BF911F64350C0071CED3 /* SignCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignCollectionViewCell.swift; path = Views/SignCell/SignCollectionViewCell.swift; sourceTree = "<group>"; };
-		6490BF941F6436500071CED3 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationViewController.swift; path = Navigation/NavigationViewController.swift; sourceTree = "<group>"; };
-		6490BF971F6441950071CED3 /* SignFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignFactory.swift; path = Model/SignFactory.swift; sourceTree = "<group>"; };
-		6490BF9A1F644E510071CED3 /* SignProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignProtocol.swift; path = Model/SignProtocol.swift; sourceTree = "<group>"; };
+		6490BF8F1F6431390071CED3 /* SignCompatibilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignCompatibilityViewController.swift; sourceTree = "<group>"; };
+		6490BF911F64350C0071CED3 /* SignCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignCollectionViewCell.swift; sourceTree = "<group>"; };
+		6490BF941F6436500071CED3 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationCoordinator.swift; path = Navigation/NavigationCoordinator.swift; sourceTree = "<group>"; };
+		6490BF971F6441950071CED3 /* SignFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignFactory.swift; sourceTree = "<group>"; };
+		6490BF9A1F644E510071CED3 /* SignProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignProtocol.swift; sourceTree = "<group>"; };
 		6490BF9C1F6482640071CED3 /* SignDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignDefinition.swift; sourceTree = "<group>"; };
 		7C4A97A680E019EA098A47CA /* Pods-Horoscop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Horoscop.release.xcconfig"; path = "Pods/Target Support Files/Pods-Horoscop/Pods-Horoscop.release.xcconfig"; sourceTree = "<group>"; };
+		C11C0C1620F4E26D0020D834 /* SignDetailedWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignDetailedWebViewController.swift; path = Views/SignDetailedWebViewController.swift; sourceTree = "<group>"; };
+		C11FFE2B20F761D4008DA316 /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
+		C11FFE2D20F79D8A008DA316 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C168305720FD1E5F00DDEF71 /* SignCompatibilityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignCompatibilityTableViewCell.swift; sourceTree = "<group>"; };
+		C192A60C20F8FFA200405AAB /* SignModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignModel.swift; sourceTree = "<group>"; };
+		C1BD4165200BEB5E0031BE23 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		C1BD4167200BF0230031BE23 /* SingleInstanceSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleInstanceSign.swift; sourceTree = "<group>"; };
 		C7AD48DA1CDEF473BDA13188 /* Pods_Horoscop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Horoscop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -85,6 +99,7 @@
 		6478C8571F5B2B140035D67A /* Horoscop */ = {
 			isa = PBXGroup;
 			children = (
+				C1BD4164200BEB480031BE23 /* Utils */,
 				6490BF991F64419A0071CED3 /* Model */,
 				6490BF961F6436540071CED3 /* Navigation */,
 				6490BF8E1F64310A0071CED3 /* Views */,
@@ -100,26 +115,18 @@
 		6490BF8E1F64310A0071CED3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6490BF931F6435110071CED3 /* SignCell */,
-				6478C85A1F5B2B140035D67A /* SignsCollectionViewController.swift */,
+				C168305620FD1E1800DDEF71 /* SignCollectionView */,
+				C168305520FD1D7300DDEF71 /* SignCompatibilityView */,
 				6490BF8C1F6430F20071CED3 /* SignPreviewViewController.swift */,
-				6490BF8F1F6431390071CED3 /* SignDetailedViewController.swift */,
+				C11C0C1620F4E26D0020D834 /* SignDetailedWebViewController.swift */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		6490BF931F6435110071CED3 /* SignCell */ = {
-			isa = PBXGroup;
-			children = (
-				6490BF911F64350C0071CED3 /* SignCollectionViewCell.swift */,
-			);
-			name = SignCell;
 			sourceTree = "<group>";
 		};
 		6490BF961F6436540071CED3 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				6490BF941F6436500071CED3 /* NavigationViewController.swift */,
+				6490BF941F6436500071CED3 /* NavigationCoordinator.swift */,
 			);
 			name = Navigation;
 			sourceTree = "<group>";
@@ -127,10 +134,10 @@
 		6490BF991F64419A0071CED3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C168305420FD1D1E00DDEF71 /* Sign Factory */,
 				646F95D41F5C6589007687DF /* Sign.swift */,
-				6490BF971F6441950071CED3 /* SignFactory.swift */,
-				6490BF9A1F644E510071CED3 /* SignProtocol.swift */,
-				6490BF9C1F6482640071CED3 /* SignDefinition.swift */,
+				C1BD4167200BF0230031BE23 /* SingleInstanceSign.swift */,
+				C192A60C20F8FFA200405AAB /* SignModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -142,6 +149,44 @@
 				7C4A97A680E019EA098A47CA /* Pods-Horoscop.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C168305420FD1D1E00DDEF71 /* Sign Factory */ = {
+			isa = PBXGroup;
+			children = (
+				6490BF971F6441950071CED3 /* SignFactory.swift */,
+				6490BF9A1F644E510071CED3 /* SignProtocol.swift */,
+				6490BF9C1F6482640071CED3 /* SignDefinition.swift */,
+			);
+			path = "Sign Factory";
+			sourceTree = "<group>";
+		};
+		C168305520FD1D7300DDEF71 /* SignCompatibilityView */ = {
+			isa = PBXGroup;
+			children = (
+				6490BF8F1F6431390071CED3 /* SignCompatibilityViewController.swift */,
+				C168305720FD1E5F00DDEF71 /* SignCompatibilityTableViewCell.swift */,
+			);
+			path = SignCompatibilityView;
+			sourceTree = "<group>";
+		};
+		C168305620FD1E1800DDEF71 /* SignCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				6490BF911F64350C0071CED3 /* SignCollectionViewCell.swift */,
+				6478C85A1F5B2B140035D67A /* SignsCollectionViewController.swift */,
+			);
+			path = SignCollectionView;
+			sourceTree = "<group>";
+		};
+		C1BD4164200BEB480031BE23 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C1BD4165200BEB5E0031BE23 /* Colors.swift */,
+				C11FFE2B20F761D4008DA316 /* StringFormatter.swift */,
+				C11FFE2D20F79D8A008DA316 /* Constants.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,7 +201,6 @@
 				6478C8521F5B2B140035D67A /* Frameworks */,
 				6478C8531F5B2B140035D67A /* Resources */,
 				6C94047E8FCF317EBE3E6246 /* [CP] Embed Pods Frameworks */,
-				874EFDAE4403BE4B58C56CCB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -222,28 +266,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Horoscop/Pods-Horoscop-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Horoscop/Pods-Horoscop-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		874EFDAE4403BE4B58C56CCB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Horoscop/Pods-Horoscop-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E71846253A4AE937D40FC8A1 /* [CP] Check Pods Manifest.lock */ = {
@@ -252,13 +284,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Horoscop-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -269,14 +304,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				6490BF8D1F6430F20071CED3 /* SignPreviewViewController.swift in Sources */,
+				C11FFE2C20F761D4008DA316 /* StringFormatter.swift in Sources */,
+				C1BD4166200BEB5E0031BE23 /* Colors.swift in Sources */,
 				6490BF9B1F644E510071CED3 /* SignProtocol.swift in Sources */,
+				C1BD4168200BF0230031BE23 /* SingleInstanceSign.swift in Sources */,
+				C11FFE2E20F79D8A008DA316 /* Constants.swift in Sources */,
 				646F95D51F5C6589007687DF /* Sign.swift in Sources */,
 				6478C85B1F5B2B140035D67A /* SignsCollectionViewController.swift in Sources */,
 				6490BF921F64350C0071CED3 /* SignCollectionViewCell.swift in Sources */,
 				6490BF9D1F6482640071CED3 /* SignDefinition.swift in Sources */,
-				6490BF901F6431390071CED3 /* SignDetailedViewController.swift in Sources */,
+				6490BF901F6431390071CED3 /* SignCompatibilityViewController.swift in Sources */,
 				6490BF981F6441950071CED3 /* SignFactory.swift in Sources */,
-				6490BF951F6436500071CED3 /* NavigationViewController.swift in Sources */,
+				C168305820FD1E5F00DDEF71 /* SignCompatibilityTableViewCell.swift in Sources */,
+				C192A60D20F8FFA200405AAB /* SignModel.swift in Sources */,
+				6490BF951F6436500071CED3 /* NavigationCoordinator.swift in Sources */,
+				C11C0C1720F4E26D0020D834 /* SignDetailedWebViewController.swift in Sources */,
 				6478C8591F5B2B140035D67A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +445,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H8Q62M33XE;
 				INFOPLIST_FILE = Horoscop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ro.narcis.Horoscop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -417,6 +460,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H8Q62M33XE;
 				INFOPLIST_FILE = Horoscop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ro.narcis.Horoscop;
 				PRODUCT_NAME = "$(TARGET_NAME)";

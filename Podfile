@@ -6,7 +6,6 @@ target 'Horoscop' do
   use_frameworks!
 
   # Pods for Horoscop
-  pod 'RxSwift',    '~> 3.0'
-  pod 'RxCocoa',    '~> 3.0'
+  pod 'Alamofire', '~> 4.7'
 	
 end

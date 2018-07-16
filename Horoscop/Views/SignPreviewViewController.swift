@@ -10,26 +10,72 @@ import UIKit
 
 class SignPreviewViewController: UIViewController {
 
+    @IBOutlet weak private var signInformationView: UIView!
+    @IBOutlet weak private var actionsView: UIView!
+    
+    @IBOutlet weak private var signImageView: UIImageView!
+    @IBOutlet weak private var signNameLabel: UILabel!
+    
+    @IBOutlet weak private var todayButton: UIButton!
+    @IBOutlet weak private var profileButton: UIButton!
+    @IBOutlet weak private var yearButton: UIButton!
+    @IBOutlet weak private var compatibilityButton: UIButton!
+    
+    public var signProtocol: SignProtocol?
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        setupUI()
+        setupSigns()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - IBActions
+    
+    @IBAction private func todayButtonAction(_ sender: UIButton) {
+        gotoNextPage(withChoice: .Daily)
     }
-    */
+    @IBAction private func profileButtonAction(_ sender: UIButton) {
+        gotoNextPage(withChoice: .Profile)
+    }
+    @IBAction private func annualButtonAction(_ sender: UIButton) {
+        gotoNextPage(withChoice: .Annual)
+    }
+    @IBAction private func compatibilityButtonAction(_ sender: UIButton) {
+        if let signCompatibilityVC = NavigationCoordinator.getSignCompatibility() as? SignCompatibilityViewController {
+            signCompatibilityVC.signProtocol = signProtocol
+            self.navigationController?.pushViewController(signCompatibilityVC, animated: true)
+        }
+    }
+    
+    // MARK: - Setup UI
+    
+    private func setupUI() {
+        view.backgroundColor = Colors.backgroundColor()
+        signInformationView.backgroundColor = UIColor.clear
+        actionsView.backgroundColor = UIColor.clear
+        
+        todayButton.backgroundColor = Colors.almostblack()
+        profileButton.backgroundColor = Colors.darkGray()
+        yearButton.backgroundColor = Colors.gray()
+        compatibilityButton.backgroundColor = Colors.lightGray()
+    }
+    
+    private func setupSigns() {
+        signImageView.image = UIImage(named: (signProtocol?.getSignImage())!)
+        signNameLabel.text = signProtocol?.getSignName()
+    }
+    
+    // MARK: - Navigation helper
+    
+    private func gotoNextPage(withChoice horoscopeChoice: HoroscopeChoice) {
+        if let webViewController = NavigationCoordinator.getSignDetailedWebView() as? SignDetailedWebViewController {
+            webViewController.signProtocol = signProtocol
+            webViewController.horoscopeChoice = horoscopeChoice
+            self.navigationController?.pushViewController(webViewController, animated: true)
+        }
+    }
 
 }

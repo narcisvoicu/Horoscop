@@ -7,5 +7,7 @@ target 'Horoscop' do
 
   # Pods for Horoscop
   pod 'Alamofire', '~> 4.7'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
 	
 end

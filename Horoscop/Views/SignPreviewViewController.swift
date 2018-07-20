@@ -64,7 +64,9 @@ class SignPreviewViewController: UIViewController {
     }
     
     private func setupSigns() {
-        signImageView.image = UIImage(named: (signProtocol?.getSignImage())!)
+        if let signImageName = signProtocol?.getSignImage() {
+            signImageView.image = UIImage(named: signImageName)
+        }
         signNameLabel.text = signProtocol?.getSignName()
     }
     

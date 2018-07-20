@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import FirebaseDatabase
 
 enum HoroscopeChoice {
     case Daily
@@ -31,6 +32,9 @@ class SignDetailedWebViewController: UIViewController {
     public var signProtocol: SignProtocol?
     public var horoscopeChoice: HoroscopeChoice?
     
+    private var databaseReference: DatabaseReference!
+    private var signDetailedWebViewPresenter: SignDetailedWebViewPresenter?
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -38,13 +42,16 @@ class SignDetailedWebViewController: UIViewController {
         
         initialSetup()
         setupUI()
-        loadTheRightURL()
+        setupFirebaseDatabase()
+        loadTheRightText()
     }
     
     // MARK: - Setup
     
     private func initialSetup() {
-        signImageView.image = UIImage(named: (signProtocol?.getSignImage())!)
+        if let signImage = signProtocol?.getSignImage() {
+            signImageView.image = UIImage(named: signImage)
+        }
         signNameLabel.text = signProtocol?.getSignName()
         signDatesLabel.text = signProtocol?.getSignDates()
         todayDateLabel.text = DateFormat.getCurrentDate()
@@ -58,6 +65,17 @@ class SignDetailedWebViewController: UIViewController {
         activityIndicator.color = UIColor.white
     }
     
+    private func setupFirebaseDatabase() {
+        Database.database().isPersistenceEnabled = true
+        databaseReference = Database.database().reference()
+        
+        guard let signProtocol = signProtocol else {
+            textView.text = ErrorConstants.normalError
+            return
+        }
+        signDetailedWebViewPresenter = SignDetailedWebViewPresenter(databaseReference: databaseReference, signProtocol: signProtocol)
+    }
+    
     // MARK: - Load Helper Functions
     
     private func loadRequest(withURL url: String) {
@@ -69,7 +87,7 @@ class SignDetailedWebViewController: UIViewController {
         }
     }
     
-    private func loadTheRightURL() {
+    private func loadTheRightText() {
         switch horoscopeChoice {
         case .Daily?:
             guard let url = signProtocol?.getDailyHoroscope() else {
@@ -77,15 +95,9 @@ class SignDetailedWebViewController: UIViewController {
             }
             loadRequest(withURL: url)
         case .Profile?:
-            guard let url = signProtocol?.getSignProfile() else {
-                return
-            }
-            loadRequest(withURL: url)
+            signDetailedWebViewPresenter?.getFirebaseText(textView: textView, choice: "profile")
         case .Annual?:
-            guard let url = signProtocol?.getAnnualHoroscope() else {
-                return
-            }
-            loadRequest(withURL: url)
+            signDetailedWebViewPresenter?.getFirebaseText(textView: textView, choice: "annual")
         case .Compatibility?:
             print("Compatibility")
         default:
@@ -107,20 +119,17 @@ extension SignDetailedWebViewController: WKNavigationDelegate {
     private func showTextByChoice(withHTML html: Any) {
         switch horoscopeChoice {
         case .Daily?:
-            populateTextView(byUpperLimit: HTMLLimits.daily["upperLimit"]!, lowerLimit: HTMLLimits.daily["lowerLimit"]!, html: html)
-        case .Profile?:
-            populateTextView(byUpperLimit: (signProtocol?.getSignDates())!, lowerLimit: HTMLLimits.profile["lowerLimit"]!, html: html)
-        case .Annual?:
-            populateTextView(byUpperLimit: HTMLLimits.annual["upperLimit"]!, lowerLimit: HTMLLimits.annual["lowerLimit"]!, html: html)
-        case .Compatibility?:
-            print("Compatibility")
+            populateTextView(byUpperLimit: HTMLLimits.dailyUpperLimit, lowerLimit: HTMLLimits.dailyLowerLimit, html: html)
         default:
-            print("Error")
+            textView.text = ErrorConstants.normalError
         }
     }
     
     private func populateTextView(byUpperLimit upperLimit: String, lowerLimit: String, html: Any) {
-        let fullText = html as! String
+        guard let fullText = html as? String else {
+            textView.text = ErrorConstants.showTextError
+            return
+        }
         let trimmedText = HoroscopeTrimmer.getHoroscope(entireDescription: fullText, upperLimit: upperLimit, lowerLimit: lowerLimit)
         self.textView.text = trimmedText
         self.activityIndicator.stopAnimating()

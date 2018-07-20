@@ -10,8 +10,8 @@ import UIKit
 
 class SignCompatibilityTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var signImageView: UIImageView!
-    @IBOutlet weak var signNameLabel: UILabel!
+    @IBOutlet weak private var signImageView: UIImageView!
+    @IBOutlet weak private var signNameLabel: UILabel!
     
     class var reuseIdentifier: String {
         return "SignCompatibilityCell"
@@ -19,7 +19,6 @@ class SignCompatibilityTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     public func setupCellData(signNames: [String], signImages: [String], indexPath: IndexPath) {

@@ -9,11 +9,11 @@
 import Foundation
 
 struct HTMLLimits {
-    static let daily = ["upperLimit": "2018", "lowerLimit": "Horoscop"]
-    static let profile = ["lowerLimit": "loading..."]
-    static let annual = ["upperLimit": "horoscop anual", "lowerLimit": "Acum, "]
+    static let dailyUpperLimit = "2018"
+    static let dailyLowerLimit = "Horoscop"
 }
 
 struct ErrorConstants {
-    static let normalError = "A aparut o problema. Te rugam sa reincerci"
+    static let normalError = "A aparut o problema. Te rugam sa incerci mai tarziu!"
+    static let showTextError = "A aparut o problema la aparitia horoscopului. Te rugam sa incerci mai tarziu!"
 }

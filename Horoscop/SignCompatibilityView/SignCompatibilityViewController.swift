@@ -31,7 +31,9 @@ class SignCompatibilityViewController: UIViewController {
     // MARK: - Setup
     
     private func initialSetup() {
-        signImageView.image = UIImage(named: (signProtocol?.getSignImage())!)
+        if let signImageName = signProtocol?.getSignImage() {
+            signImageView.image = UIImage(named: signImageName)
+        }
         signNameLabel.text = signProtocol?.getSignName()
         signDateLabel.text = signProtocol?.getSignDates()
     }
@@ -51,7 +53,12 @@ class SignCompatibilityViewController: UIViewController {
 
 extension SignCompatibilityViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let selectedSign = signModel.signs[indexPath.row];
+        if let signDetailedCompatibilityVC = NavigationCoordinator.getSignDetailedCompatibility() as? SignDetailedCompatibilityViewController {
+            signDetailedCompatibilityVC.firstSignProtocol = signProtocol
+            signDetailedCompatibilityVC.secondSignProtocol = SignFactory.getSign(sign: selectedSign)
+            self.navigationController?.pushViewController(signDetailedCompatibilityVC, animated: true)
+        }
     }
 }
 

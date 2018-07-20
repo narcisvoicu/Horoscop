@@ -30,6 +30,10 @@ class NavigationCoordinator: NSObject {
         return getMainStoryboard().instantiateViewController(withIdentifier: "SignCompatibility")
     }
     
+    static func getSignDetailedCompatibility() -> UIViewController {
+        return getMainStoryboard().instantiateViewController(withIdentifier: "SignDetailedCompatibility")
+    }
+    
     static func getSignDetailedWebView() -> UIViewController {
         return getMainStoryboard().instantiateViewController(withIdentifier: "SignDetailedWebView")
     }

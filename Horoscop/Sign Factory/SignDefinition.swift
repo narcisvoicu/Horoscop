@@ -8,6 +8,15 @@
 
 import Foundation
 
+protocol SignProtocol {
+    func getSignName()  -> String
+    func getSignImage() -> String
+    func getSignDates() -> String
+    func getDailyHoroscope() -> String
+    func getAnnualHoroscope() -> String
+    func getSignProfile() -> String
+}
+
 struct Aries: SignProtocol {
     var sign: Sign
     

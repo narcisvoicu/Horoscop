@@ -37,4 +37,8 @@ class NavigationCoordinator: NSObject {
     static func getSignDetailedWebView() -> UIViewController {
         return getMainStoryboard().instantiateViewController(withIdentifier: "SignDetailedWebView")
     }
+    
+    static func getErrorView() -> UIViewController {
+        return ErrorViewController(nibName: "ErrorViewController", bundle: nil)
+    }
 }

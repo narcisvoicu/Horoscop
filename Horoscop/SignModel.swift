@@ -31,9 +31,7 @@ class SignModel {
         signs.append(Sign(signName: .Aquarius))
         signs.append(Sign(signName: .Pisces))
         
-        for sign in signs {
-            signNames.append(SignFactory.getSign(sign: sign).getSignName())
-            signImages.append(SignFactory.getSign(sign: sign).getSignImage())
-        }
+        signNames = signs.map { SignFactory.getSign(sign: $0).getSignName() }
+        signImages = signs.map { SignFactory.getSign(sign: $0).getSignImage() }
     }
 }

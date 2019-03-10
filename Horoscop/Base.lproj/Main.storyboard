@@ -388,10 +388,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="V0u-on-U9X">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yh1-HC-hg2" firstAttribute="leading" secondItem="NxF-eZ-Vhp" secondAttribute="leading" constant="35" id="4u2-1G-z18"/>
+                            <constraint firstItem="V0u-on-U9X" firstAttribute="centerX" secondItem="NxF-eZ-Vhp" secondAttribute="centerX" id="97q-9U-JA4"/>
+                            <constraint firstItem="V0u-on-U9X" firstAttribute="centerY" secondItem="NxF-eZ-Vhp" secondAttribute="centerY" id="GDS-XS-vRt"/>
                             <constraint firstItem="RoQ-98-6b4" firstAttribute="top" secondItem="Vm4-sO-ltp" secondAttribute="bottom" id="Hyl-qk-Smg"/>
                             <constraint firstItem="kW3-ki-xTY" firstAttribute="centerX" secondItem="umR-SG-Uc7" secondAttribute="centerX" id="IJ0-gd-GOv"/>
                             <constraint firstItem="EI5-Zl-tpg" firstAttribute="top" secondItem="ihw-Tw-Mzl" secondAttribute="bottom" constant="26" id="JoQ-8L-42j"/>
@@ -410,6 +415,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="V0u-on-U9X" id="nJM-Tv-og8"/>
                         <outlet property="compatibilityTextView" destination="Vm4-sO-ltp" id="pyE-Wo-u9z"/>
                         <outlet property="firstSignImageView" destination="yh1-HC-hg2" id="qIJ-TH-2lb"/>
                         <outlet property="firstSignNameLabel" destination="dmr-Hw-t8j" id="4mx-m5-bSo"/>

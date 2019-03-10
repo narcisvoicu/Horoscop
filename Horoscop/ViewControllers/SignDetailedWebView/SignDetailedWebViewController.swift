@@ -50,7 +50,7 @@ class SignDetailedWebViewController: UIViewController {
         setupFirebaseDatabase()
         //deleteEntriesFromEntity()
         //setupCoreData()
-        loadTheRightText()
+        loadTextByChoice()
     }
     
     // MARK: - Setup
@@ -85,6 +85,8 @@ class SignDetailedWebViewController: UIViewController {
     
     // MARK: - Load Helper Functions
     
+    // TODO: - maybe a protocol inside presenter for this method
+    
     private func loadRequest(withURL url: String) {
         if let myUrl = URL(string: url) {
             let myRequest = URLRequest(url: myUrl)
@@ -94,7 +96,7 @@ class SignDetailedWebViewController: UIViewController {
         }
     }
     
-    private func loadTheRightText() {
+    private func loadTextByChoice() {
         switch horoscopeChoice {
         case .Daily?:
             guard let url = signProtocol?.getDailyHoroscope() else {
@@ -102,6 +104,7 @@ class SignDetailedWebViewController: UIViewController {
             }
             loadRequest(withURL: url)
         case .Profile?:
+            // TODO: - enum for choice
             signDetailedWebViewPresenter?.makeFirebaseCall(choice: "profile",
                                                            completion: { (text, isError) in
                                                             self.activityIndicator.stopAnimating()
@@ -117,13 +120,30 @@ class SignDetailedWebViewController: UIViewController {
                                                                 self.textView.text = text
                                                             }
             })
-            signDetailedWebViewPresenter?.makeFirebaseCall(textView: textView, choice: "profile", activityIndicator: activityIndicator, parentViewController: self)
         case .Annual?:
-            signDetailedWebViewPresenter?.makeFirebaseCall(textView: textView, choice: "annual", activityIndicator: activityIndicator, parentViewController: self)
+            signDetailedWebViewPresenter?.makeFirebaseCall(choice: "annual",
+                                                           completion: { (text, isError) in
+                                                            self.activityIndicator.stopAnimating()
+                                                            guard let text = text else {
+                                                                return
+                                                            }
+                                                            if isError {
+                                                                self.errorViewController?.setErrorTexts(errorText: ErrorConstants.timeoutError,
+                                                                                                        imageName: ImageNames.whiteNoInternet,
+                                                                                                        textView: self.textView,
+                                                                                                        onParentViewController: self)
+                                                            } else {
+                                                                self.textView.text = text
+                                                            }
+            })
         default:
             print("altceva")
         }
     }
+    
+    /// TODO: - Check if CoreData works correctly
+    ///       - Think were to put these methods (maybe inside presenter)
+    ///       - Think of creating a separate layer for persistency (it will be used in other parts of the code too - probably)
     
 //    private func setupCoreData() {
 //        coreDataContext = appDelegate.persistentContainer.viewContext

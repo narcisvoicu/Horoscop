@@ -35,13 +35,13 @@ class SignPreviewViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction private func todayButtonAction(_ sender: UIButton) {
-        gotoNextPage(withChoice: .Daily)
+        gotoNextPage(withChoice: .daily)
     }
     @IBAction private func profileButtonAction(_ sender: UIButton) {
-        gotoNextPage(withChoice: .Profile)
+        gotoNextPage(withChoice: .profile)
     }
     @IBAction private func annualButtonAction(_ sender: UIButton) {
-        gotoNextPage(withChoice: .Annual)
+        gotoNextPage(withChoice: .annual)
     }
     @IBAction private func compatibilityButtonAction(_ sender: UIButton) {
         if let signCompatibilityVC = NavigationCoordinator.getSignCompatibility() as? SignCompatibilityViewController {

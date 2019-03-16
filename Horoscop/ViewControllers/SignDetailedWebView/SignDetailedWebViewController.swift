@@ -11,11 +11,11 @@ import WebKit
 import FirebaseDatabase
 import CoreData
 
-enum HoroscopeChoice {
-    case Daily
-    case Profile
-    case Annual
-    case Compatibility
+enum HoroscopeChoice: String {
+    case daily = "daily"
+    case profile = "profile"
+    case annual = "annual"
+    case compatibility = "compatibility"
 }
 
 class SignDetailedWebViewController: UIViewController {
@@ -33,7 +33,7 @@ class SignDetailedWebViewController: UIViewController {
     public var signProtocol: SignProtocol?
     public var horoscopeChoice: HoroscopeChoice?
     
-    private var signDetailedWebViewPresenter: SignDetailedWebViewPresenter?
+    private var presenter: SignDetailedWebViewPresenter?
     fileprivate var errorViewController: ErrorViewController?
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -48,9 +48,13 @@ class SignDetailedWebViewController: UIViewController {
         initialSetup()
         setupUI()
         setupFirebaseDatabase()
+        
         //deleteEntriesFromEntity()
         //setupCoreData()
-        loadTextByChoice()
+        if let choice = horoscopeChoice {
+            loadText(by: choice)
+        }
+        webView.navigationDelegate = self
     }
     
     // MARK: - Setup
@@ -80,61 +84,57 @@ class SignDetailedWebViewController: UIViewController {
         
         errorViewController = NavigationCoordinator.getErrorView() as? ErrorViewController
         
-        signDetailedWebViewPresenter = SignDetailedWebViewPresenter(signProtocol: signProtocol)
+        presenter = SignDetailedWebViewPresenter(signProtocol: signProtocol)
     }
     
     // MARK: - Load Helper Functions
     
-    // TODO: - maybe a protocol inside presenter for this method
-    
-    private func loadRequest(withURL url: String) {
-        if let myUrl = URL(string: url) {
-            let myRequest = URLRequest(url: myUrl)
-            webView.navigationDelegate = self
-            webView.load(myRequest)
-            activityIndicator.startAnimating()
-        }
-    }
-    
-    private func loadTextByChoice() {
-        switch horoscopeChoice {
-        case .Daily?:
-            guard let url = signProtocol?.getDailyHoroscope() else {
-                return
-            }
-            loadRequest(withURL: url)
-        case .Profile?:
+    private func loadText(by choice: HoroscopeChoice) {
+        switch choice {
+        case .daily:
+            presenter?.dailyButtonTapped(webview: webView, activityIndicator: activityIndicator)
+        case .profile:
             // TODO: - enum for choice
-            signDetailedWebViewPresenter?.makeFirebaseCall(choice: "profile",
-                                                           completion: { (text, isError) in
-                                                            self.activityIndicator.stopAnimating()
-                                                            guard let text = text else {
-                                                                return
-                                                            }
-                                                            if isError {
-                                                                self.errorViewController?.setErrorTexts(errorText: ErrorConstants.timeoutError,
-                                                                                                        imageName: ImageNames.whiteNoInternet,
-                                                                                                        textView: self.textView,
-                                                                                                        onParentViewController: self)
-                                                            } else {
-                                                                self.textView.text = text
-                                                            }
+            presenter?.makeFirebaseCall(choice: .profile,
+                                        completion: { (text, isError, isTimeoutError) in
+                                            self.activityIndicator.stopAnimating()
+                                            guard let text = text else {
+                                                return
+                                            }
+                                            if isError {
+                                                self.errorViewController?.setErrorTexts(errorText: text,
+                                                                                        imageName: ImageNames.whiteRobot,
+                                                                                        textView: self.textView,
+                                                                                        onParentViewController: self)
+                                            } else if isTimeoutError {
+                                                self.errorViewController?.setErrorTexts(errorText: ErrorConstants.timeoutError,
+                                                                                        imageName: ImageNames.whiteNoInternet,
+                                                                                        textView: self.textView,
+                                                                                        onParentViewController: self)
+                                            } else {
+                                                self.textView.text = text
+                                            }
             })
-        case .Annual?:
-            signDetailedWebViewPresenter?.makeFirebaseCall(choice: "annual",
-                                                           completion: { (text, isError) in
-                                                            self.activityIndicator.stopAnimating()
-                                                            guard let text = text else {
-                                                                return
-                                                            }
-                                                            if isError {
-                                                                self.errorViewController?.setErrorTexts(errorText: ErrorConstants.timeoutError,
-                                                                                                        imageName: ImageNames.whiteNoInternet,
-                                                                                                        textView: self.textView,
-                                                                                                        onParentViewController: self)
-                                                            } else {
-                                                                self.textView.text = text
-                                                            }
+        case .annual:
+            presenter?.makeFirebaseCall(choice: .annual,
+                                        completion: { (text, isError, isTimeoutError) in
+                                            self.activityIndicator.stopAnimating()
+                                            guard let text = text else {
+                                                return
+                                            }
+                                            if isError {
+                                                self.errorViewController?.setErrorTexts(errorText: text,
+                                                                                        imageName: ImageNames.whiteRobot,
+                                                                                        textView: self.textView,
+                                                                                        onParentViewController: self)
+                                            } else if isTimeoutError{
+                                                self.errorViewController?.setErrorTexts(errorText: ErrorConstants.timeoutError,
+                                                                                        imageName: ImageNames.whiteNoInternet,
+                                                                                        textView: self.textView,
+                                                                                        onParentViewController: self)
+                                            } else {
+                                                self.textView.text = text
+                                            }
             })
         default:
             print("altceva")
@@ -221,7 +221,7 @@ class SignDetailedWebViewController: UIViewController {
 extension SignDetailedWebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         webView.evaluateJavaScript("document.documentElement.innerText") { (html, error) in
-            self.showTextByChoice(withHTML: html ?? "None")
+            self.populateTextView(with: html)
         }
     }
     
@@ -233,26 +233,18 @@ extension SignDetailedWebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         print("Webview error: \(error.localizedDescription)")
         errorViewController?.setErrorTexts(errorText: ErrorConstants.normalError, imageName: ImageNames.whiteRobot, textView: textView, onParentViewController: self)
-        showTextByChoice(withHTML: "None")
+        populateTextView(with: "None")
         activityIndicator.stopAnimating()
     }
     
-    private func showTextByChoice(withHTML html: Any) {
-        switch horoscopeChoice {
-        case .Daily?:
-            populateTextView(byUpperLimit: HTMLLimits.dailyUpperLimit, lowerLimit: HTMLLimits.dailyLowerLimit, html: html)
-        default:
-            //textView.text = fetchCoreData()
-            print("default")
-        }
-    }
-    
-    private func populateTextView(byUpperLimit upperLimit: String, lowerLimit: String, html: Any) {
+    private func populateTextView<T>(with html: T) {
         guard let fullText = html as? String else {
             textView.text = ErrorConstants.showTextError
             return
         }
-        let trimmedText = HoroscopeTrimmer.getHoroscope(entireDescription: fullText, upperLimit: upperLimit, lowerLimit: lowerLimit)
+        let trimmedText = HoroscopeTrimmer.getHoroscope(entireDescription: fullText,
+                                                        upperLimit: HTMLLimits.dailyUpperLimit,
+                                                        lowerLimit: HTMLLimits.dailyLowerLimit)
         
 //        saveDailyToCoreData(dailyHoroscope: trimmedText)
 //
@@ -262,7 +254,6 @@ extension SignDetailedWebViewController: WKNavigationDelegate {
         
         self.activityIndicator.stopAnimating()
     }
-    
     
 }
 

@@ -17,10 +17,12 @@
 		6490BF901F6431390071CED3 /* SignCompatibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF8F1F6431390071CED3 /* SignCompatibilityViewController.swift */; };
 		6490BF921F64350C0071CED3 /* SignCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF911F64350C0071CED3 /* SignCollectionViewCell.swift */; };
 		6490BF951F6436500071CED3 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF941F6436500071CED3 /* NavigationCoordinator.swift */; };
-		6490BF981F6441950071CED3 /* SignFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF971F6441950071CED3 /* SignFactory.swift */; };
-		6490BF9D1F6482640071CED3 /* SignDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF9C1F6482640071CED3 /* SignDefinition.swift */; };
 		8A2EF07BF980C7A773661AE0 /* Pods_Horoscop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AD48DA1CDEF473BDA13188 /* Pods_Horoscop.framework */; };
-		C11C0C1720F4E26D0020D834 /* SignDetailedWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11C0C1620F4E26D0020D834 /* SignDetailedWebViewController.swift */; };
+		9B442B8C22B057DD000ED0E0 /* SignFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B442B8B22B057DD000ED0E0 /* SignFactory.swift */; };
+		9B59214B22AEF45A00A5EE9D /* Horoscope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B59214A22AEF45A00A5EE9D /* Horoscope.swift */; };
+		9B59214E22AEF78000A5EE9D /* HoroscopeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B59214D22AEF78000A5EE9D /* HoroscopeService.swift */; };
+		9BC25D0022C50B9B002F68AF /* URLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC25CFF22C50B9B002F68AF /* URLFactory.swift */; };
+		C11C0C1720F4E26D0020D834 /* SignDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11C0C1620F4E26D0020D834 /* SignDetailsController.swift */; };
 		C11FFE2C20F761D4008DA316 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11FFE2B20F761D4008DA316 /* StringFormatter.swift */; };
 		C11FFE2E20F79D8A008DA316 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11FFE2D20F79D8A008DA316 /* Constants.swift */; };
 		C137669621060FE100B6C68C /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C137669521060FE100B6C68C /* Networking.swift */; };
@@ -30,7 +32,6 @@
 		C168305820FD1E5F00DDEF71 /* SignCompatibilityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C168305720FD1E5F00DDEF71 /* SignCompatibilityTableViewCell.swift */; };
 		C16E8F39211F5A4F00B7F7DA /* HoroscopModelData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C16E8F37211F5A4F00B7F7DA /* HoroscopModelData.xcdatamodeld */; };
 		C18BA75820FDF92400A615FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C18BA75720FDF92300A615FA /* GoogleService-Info.plist */; };
-		C192A60D20F8FFA200405AAB /* SignModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C192A60C20F8FFA200405AAB /* SignModel.swift */; };
 		C19A219520FE110500193223 /* SignDetailedCompatibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19A219420FE110500193223 /* SignDetailedCompatibilityViewController.swift */; };
 		C1B46F4C20FF9F9800A7441D /* SignDetailedWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B46F4B20FF9F9800A7441D /* SignDetailedWebViewPresenter.swift */; };
 		C1BD4166200BEB5E0031BE23 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD4165200BEB5E0031BE23 /* Colors.swift */; };
@@ -50,10 +51,12 @@
 		6490BF8F1F6431390071CED3 /* SignCompatibilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignCompatibilityViewController.swift; sourceTree = "<group>"; };
 		6490BF911F64350C0071CED3 /* SignCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignCollectionViewCell.swift; sourceTree = "<group>"; };
 		6490BF941F6436500071CED3 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationCoordinator.swift; path = Navigation/NavigationCoordinator.swift; sourceTree = "<group>"; };
-		6490BF971F6441950071CED3 /* SignFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignFactory.swift; sourceTree = "<group>"; };
-		6490BF9C1F6482640071CED3 /* SignDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignDefinition.swift; sourceTree = "<group>"; };
 		7C4A97A680E019EA098A47CA /* Pods-Horoscop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Horoscop.release.xcconfig"; path = "Pods/Target Support Files/Pods-Horoscop/Pods-Horoscop.release.xcconfig"; sourceTree = "<group>"; };
-		C11C0C1620F4E26D0020D834 /* SignDetailedWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignDetailedWebViewController.swift; sourceTree = "<group>"; };
+		9B442B8B22B057DD000ED0E0 /* SignFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignFactory.swift; sourceTree = "<group>"; };
+		9B59214A22AEF45A00A5EE9D /* Horoscope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Horoscope.swift; sourceTree = "<group>"; };
+		9B59214D22AEF78000A5EE9D /* HoroscopeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeService.swift; sourceTree = "<group>"; };
+		9BC25CFF22C50B9B002F68AF /* URLFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFactory.swift; sourceTree = "<group>"; };
+		C11C0C1620F4E26D0020D834 /* SignDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignDetailsController.swift; sourceTree = "<group>"; };
 		C11FFE2B20F761D4008DA316 /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
 		C11FFE2D20F79D8A008DA316 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C137669521060FE100B6C68C /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
@@ -63,7 +66,6 @@
 		C168305720FD1E5F00DDEF71 /* SignCompatibilityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignCompatibilityTableViewCell.swift; sourceTree = "<group>"; };
 		C16E8F38211F5A4F00B7F7DA /* HoroscopModelData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HoroscopModelData.xcdatamodel; sourceTree = "<group>"; };
 		C18BA75720FDF92300A615FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C192A60C20F8FFA200405AAB /* SignModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignModel.swift; sourceTree = "<group>"; };
 		C19A219420FE110500193223 /* SignDetailedCompatibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignDetailedCompatibilityViewController.swift; sourceTree = "<group>"; };
 		C1B46F4B20FF9F9800A7441D /* SignDetailedWebViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignDetailedWebViewPresenter.swift; sourceTree = "<group>"; };
 		C1BD4165200BEB5E0031BE23 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -111,11 +113,14 @@
 		6478C8571F5B2B140035D67A /* Horoscop */ = {
 			isa = PBXGroup;
 			children = (
-				C16E8F36211F5A2A00B7F7DA /* CoreData */,
-				C13766982106130400B6C68C /* ViewControllers */,
-				C1BD4164200BEB480031BE23 /* Utils */,
 				6490BF991F64419A0071CED3 /* Model */,
+				C16E8F36211F5A2A00B7F7DA /* CoreData */,
+				9B59214C22AEF47C00A5EE9D /* Networking */,
+				9B442B8D22B194B2000ED0E0 /* Views */,
+				C13766982106130400B6C68C /* ViewControllers */,
+				9B442B8E22B197EB000ED0E0 /* ViewModels */,
 				6490BF961F6436540071CED3 /* Navigation */,
+				C1BD4164200BEB480031BE23 /* Utils */,
 				6478C8581F5B2B140035D67A /* AppDelegate.swift */,
 				6478C85C1F5B2B140035D67A /* Main.storyboard */,
 				6478C85F1F5B2B140035D67A /* Assets.xcassets */,
@@ -137,9 +142,9 @@
 		6490BF991F64419A0071CED3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C168305420FD1D1E00DDEF71 /* Sign Factory */,
+				9B59214A22AEF45A00A5EE9D /* Horoscope.swift */,
+				9B442B8B22B057DD000ED0E0 /* SignFactory.swift */,
 				646F95D41F5C6589007687DF /* Sign.swift */,
-				C192A60C20F8FFA200405AAB /* SignModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -151,6 +156,42 @@
 				7C4A97A680E019EA098A47CA /* Pods-Horoscop.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9B442B8D22B194B2000ED0E0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9B442B8F22B19840000ED0E0 /* Cells */,
+				C1376697210612E300B6C68C /* ErrorView */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9B442B8E22B197EB000ED0E0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C1B46F4B20FF9F9800A7441D /* SignDetailedWebViewPresenter.swift */,
+				C152CDEC20FE313100012ADB /* SignDetailedCompatibilityPresenter.swift */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		9B442B8F22B19840000ED0E0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6490BF911F64350C0071CED3 /* SignCollectionViewCell.swift */,
+				C168305720FD1E5F00DDEF71 /* SignCompatibilityTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9B59214C22AEF47C00A5EE9D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9B59214D22AEF78000A5EE9D /* HoroscopeService.swift */,
+				9BC25CFF22C50B9B002F68AF /* URLFactory.swift */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		C1376697210612E300B6C68C /* ErrorView */ = {
@@ -165,41 +206,13 @@
 		C13766982106130400B6C68C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C1376697210612E300B6C68C /* ErrorView */,
-				C1B46F4A20FF9F5700A7441D /* SignDetailedWebView */,
-				C168305620FD1E1800DDEF71 /* SignCollectionView */,
-				C168305520FD1D7300DDEF71 /* SignCompatibilityView */,
+				6478C85A1F5B2B140035D67A /* SignsCollectionViewController.swift */,
 				6490BF8C1F6430F20071CED3 /* SignPreviewViewController.swift */,
+				C11C0C1620F4E26D0020D834 /* SignDetailsController.swift */,
+				C19A219420FE110500193223 /* SignDetailedCompatibilityViewController.swift */,
+				6490BF8F1F6431390071CED3 /* SignCompatibilityViewController.swift */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		C168305420FD1D1E00DDEF71 /* Sign Factory */ = {
-			isa = PBXGroup;
-			children = (
-				6490BF971F6441950071CED3 /* SignFactory.swift */,
-				6490BF9C1F6482640071CED3 /* SignDefinition.swift */,
-			);
-			path = "Sign Factory";
-			sourceTree = "<group>";
-		};
-		C168305520FD1D7300DDEF71 /* SignCompatibilityView */ = {
-			isa = PBXGroup;
-			children = (
-				C1ADBCE52101E72B00C2671B /* SignDetailedCompatibilityView */,
-				6490BF8F1F6431390071CED3 /* SignCompatibilityViewController.swift */,
-				C168305720FD1E5F00DDEF71 /* SignCompatibilityTableViewCell.swift */,
-			);
-			path = SignCompatibilityView;
-			sourceTree = "<group>";
-		};
-		C168305620FD1E1800DDEF71 /* SignCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				6490BF911F64350C0071CED3 /* SignCollectionViewCell.swift */,
-				6478C85A1F5B2B140035D67A /* SignsCollectionViewController.swift */,
-			);
-			path = SignCollectionView;
 			sourceTree = "<group>";
 		};
 		C16E8F36211F5A2A00B7F7DA /* CoreData */ = {
@@ -208,24 +221,6 @@
 				C16E8F37211F5A4F00B7F7DA /* HoroscopModelData.xcdatamodeld */,
 			);
 			name = CoreData;
-			sourceTree = "<group>";
-		};
-		C1ADBCE52101E72B00C2671B /* SignDetailedCompatibilityView */ = {
-			isa = PBXGroup;
-			children = (
-				C19A219420FE110500193223 /* SignDetailedCompatibilityViewController.swift */,
-				C152CDEC20FE313100012ADB /* SignDetailedCompatibilityPresenter.swift */,
-			);
-			path = SignDetailedCompatibilityView;
-			sourceTree = "<group>";
-		};
-		C1B46F4A20FF9F5700A7441D /* SignDetailedWebView */ = {
-			isa = PBXGroup;
-			children = (
-				C11C0C1620F4E26D0020D834 /* SignDetailedWebViewController.swift */,
-				C1B46F4B20FF9F9800A7441D /* SignDetailedWebViewPresenter.swift */,
-			);
-			path = SignDetailedWebView;
 			sourceTree = "<group>";
 		};
 		C1BD4164200BEB480031BE23 /* Utils */ = {
@@ -283,6 +278,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -363,24 +359,25 @@
 			files = (
 				6490BF8D1F6430F20071CED3 /* SignPreviewViewController.swift in Sources */,
 				C11FFE2C20F761D4008DA316 /* StringFormatter.swift in Sources */,
+				9B442B8C22B057DD000ED0E0 /* SignFactory.swift in Sources */,
 				C1BD4166200BEB5E0031BE23 /* Colors.swift in Sources */,
 				C137669F2106180C00B6C68C /* ErrorViewController.swift in Sources */,
 				C11FFE2E20F79D8A008DA316 /* Constants.swift in Sources */,
+				9B59214E22AEF78000A5EE9D /* HoroscopeService.swift in Sources */,
 				C137669621060FE100B6C68C /* Networking.swift in Sources */,
 				646F95D51F5C6589007687DF /* Sign.swift in Sources */,
 				C1B46F4C20FF9F9800A7441D /* SignDetailedWebViewPresenter.swift in Sources */,
 				6478C85B1F5B2B140035D67A /* SignsCollectionViewController.swift in Sources */,
 				6490BF921F64350C0071CED3 /* SignCollectionViewCell.swift in Sources */,
 				C16E8F39211F5A4F00B7F7DA /* HoroscopModelData.xcdatamodeld in Sources */,
-				6490BF9D1F6482640071CED3 /* SignDefinition.swift in Sources */,
 				C19A219520FE110500193223 /* SignDetailedCompatibilityViewController.swift in Sources */,
 				6490BF901F6431390071CED3 /* SignCompatibilityViewController.swift in Sources */,
-				6490BF981F6441950071CED3 /* SignFactory.swift in Sources */,
 				C168305820FD1E5F00DDEF71 /* SignCompatibilityTableViewCell.swift in Sources */,
-				C192A60D20F8FFA200405AAB /* SignModel.swift in Sources */,
+				9B59214B22AEF45A00A5EE9D /* Horoscope.swift in Sources */,
 				6490BF951F6436500071CED3 /* NavigationCoordinator.swift in Sources */,
-				C11C0C1720F4E26D0020D834 /* SignDetailedWebViewController.swift in Sources */,
+				C11C0C1720F4E26D0020D834 /* SignDetailsController.swift in Sources */,
 				6478C8591F5B2B140035D67A /* AppDelegate.swift in Sources */,
+				9BC25D0022C50B9B002F68AF /* URLFactory.swift in Sources */,
 				C152CDED20FE313100012ADB /* SignDetailedCompatibilityPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,7 +508,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ro.narcis.Horoscop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -526,7 +523,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ro.narcis.Horoscop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

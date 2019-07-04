@@ -11,9 +11,8 @@ import FirebaseDatabase
 
 class SignDetailedCompatibilityPresenter {
     
+    /*
     private var databaseReference: DatabaseReference
-    private var firstSignProtocol: SignProtocol?
-    private var secondSignProtocol: SignProtocol?
     private var errorViewController: ErrorViewController
     private let servive = NetworkService()
     
@@ -53,5 +52,6 @@ class SignDetailedCompatibilityPresenter {
             }
         }
     }
+ */
     
 }

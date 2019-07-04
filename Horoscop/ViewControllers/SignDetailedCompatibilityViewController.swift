@@ -18,13 +18,12 @@ class SignDetailedCompatibilityViewController: UIViewController {
     @IBOutlet weak private var compatibilityTextView: UITextView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    public var firstSignProtocol: SignProtocol?
-    public var secondSignProtocol: SignProtocol?
     private var signDetailedCompatibilityPresenter: SignDetailedCompatibilityPresenter?
     
     private var databaseReference: DatabaseReference!
     private var errorViewController: ErrorViewController?
     
+    /*
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -79,5 +78,5 @@ class SignDetailedCompatibilityViewController: UIViewController {
         imageView.layer.borderColor = UIColor.white.cgColor
         imageView.layer.borderWidth = 3
     }
-
+*/
 }

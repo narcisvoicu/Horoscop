@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WebKit
 import FirebaseDatabase
 import CoreData
 
@@ -18,9 +17,8 @@ enum HoroscopeChoice: String {
     case compatibility = "compatibility"
 }
 
-class SignDetailedWebViewController: UIViewController {
+class SignDetailsController: UIViewController {
 
-    @IBOutlet weak private var webView: WKWebView!
     @IBOutlet weak fileprivate var textView: UITextView!
     @IBOutlet weak fileprivate var activityIndicator: UIActivityIndicatorView!
     
@@ -30,7 +28,6 @@ class SignDetailedWebViewController: UIViewController {
     @IBOutlet weak private var signDatesLabel: UILabel!
     @IBOutlet weak private var todayDateLabel: UILabel!
     
-    public var signProtocol: SignProtocol?
     public var horoscopeChoice: HoroscopeChoice?
     
     private var presenter: SignDetailedWebViewPresenter?
@@ -40,6 +37,7 @@ class SignDetailedWebViewController: UIViewController {
     private var zodiacCoreData: ZodiacCoreData?
     private var coreDataContext: NSManagedObjectContext?
     
+    /*
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -54,17 +52,12 @@ class SignDetailedWebViewController: UIViewController {
         if let choice = horoscopeChoice {
             loadText(by: choice)
         }
-        webView.navigationDelegate = self
+       
     }
     
     // MARK: - Setup
     
     private func initialSetup() {
-        if let signImage = signProtocol?.getSignImage() {
-            signImageView.image = UIImage(named: signImage)
-        }
-        signNameLabel.text = signProtocol?.getSignName()
-        signDatesLabel.text = signProtocol?.getSignDates()
         todayDateLabel.text = DateFormat.getCurrentDate()
         textView.text = ""
     }
@@ -77,10 +70,6 @@ class SignDetailedWebViewController: UIViewController {
     }
     
     private func setupFirebaseDatabase() {
-        guard let signProtocol = signProtocol else {
-            textView.text = ErrorConstants.normalError
-            return
-        }
         
         errorViewController = NavigationCoordinator.getErrorView() as? ErrorViewController
         
@@ -92,7 +81,7 @@ class SignDetailedWebViewController: UIViewController {
     private func loadText(by choice: HoroscopeChoice) {
         switch choice {
         case .daily:
-            presenter?.dailyButtonTapped(webview: webView, activityIndicator: activityIndicator)
+          
         case .profile:
             // TODO: - enum for choice
             presenter?.makeFirebaseCall(choice: .profile,
@@ -213,47 +202,7 @@ class SignDetailedWebViewController: UIViewController {
 //            print("delete completed with errors")
 //        }
 //    }
-    
+     */
 }
 
-// MARK: - Extensions
-
-extension SignDetailedWebViewController: WKNavigationDelegate {
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        webView.evaluateJavaScript("document.documentElement.innerText") { (html, error) in
-            self.populateTextView(with: html)
-        }
-    }
-    
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        errorViewController?.setErrorTexts(errorText: ErrorConstants.normalError, imageName: ImageNames.whiteRobot, textView: textView, onParentViewController: self)
-        activityIndicator.stopAnimating()
-    }
-    
-    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        print("Webview error: \(error.localizedDescription)")
-        errorViewController?.setErrorTexts(errorText: ErrorConstants.normalError, imageName: ImageNames.whiteRobot, textView: textView, onParentViewController: self)
-        populateTextView(with: "None")
-        activityIndicator.stopAnimating()
-    }
-    
-    private func populateTextView<T>(with html: T) {
-        guard let fullText = html as? String else {
-            textView.text = ErrorConstants.showTextError
-            return
-        }
-        let trimmedText = HoroscopeTrimmer.getHoroscope(entireDescription: fullText,
-                                                        upperLimit: HTMLLimits.dailyUpperLimit,
-                                                        lowerLimit: HTMLLimits.dailyLowerLimit)
-        
-//        saveDailyToCoreData(dailyHoroscope: trimmedText)
-//
-//        self.textView.text = fetchCoreData()
-        
-        textView.text = trimmedText
-        
-        self.activityIndicator.stopAnimating()
-    }
-    
-}
 

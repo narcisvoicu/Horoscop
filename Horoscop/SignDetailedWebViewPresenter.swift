@@ -12,7 +12,7 @@ import WebKit
 
 class SignDetailedWebViewPresenter {
     
-    fileprivate var signProtocol: SignProtocol
+    /*
     private let service = NetworkService()
     private let databaseReference = Database.database().reference()
     
@@ -52,5 +52,7 @@ class SignDetailedWebViewPresenter {
             activityIndicator.startAnimating()
         }
     }
-
+*/
 }
+
+ 

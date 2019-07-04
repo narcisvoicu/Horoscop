@@ -21,9 +21,9 @@ class SignCollectionViewCell: UICollectionViewCell {
         setupUI()
     }
     
-    public func setupCellData(signNames: [String], signImages: [String], indexPath: IndexPath) {
-        signNameLabel.text = signNames[indexPath.row]
-        signImageView.image = UIImage(named: signImages[indexPath.row])
+    public func setupCellData(sign: Sign) {
+        signNameLabel.text = sign.signName
+        signImageView.image = UIImage(named: sign.signImageName)
     }
     
     private func setupUI() {

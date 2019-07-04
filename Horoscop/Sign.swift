@@ -10,20 +10,22 @@ import Foundation
 import UIKit
 
 struct Sign {
-    var signName: SignNames
-    
-    enum SignNames {
-        case Aries
-        case Taurus
-        case Gemini
-        case Cancer
-        case Leo
-        case Virgo
-        case Libra
-        case Scorpio
-        case Sagittarius
-        case Capricorn
-        case Aquarius
-        case Pisces
-    }
+    var signName: String
+    var signImageName: String
+    var signDate: String
+}
+
+enum SignType: CaseIterable {
+    case aries
+    case taurus
+    case gemini
+    case cancer
+    case leo
+    case virgo
+    case libra
+    case scorpio
+    case saggitarius
+    case capricorn
+    case aquarius
+    case pisces
 }

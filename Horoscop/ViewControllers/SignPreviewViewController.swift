@@ -9,19 +9,25 @@
 import UIKit
 
 class SignPreviewViewController: UIViewController {
-
-    @IBOutlet weak private var signInformationView: UIView!
-    @IBOutlet weak private var actionsView: UIView!
     
     @IBOutlet weak private var signImageView: UIImageView!
     @IBOutlet weak private var signNameLabel: UILabel!
+    @IBOutlet weak var signDateLabel: UILabel!
     
     @IBOutlet weak private var todayButton: UIButton!
-    @IBOutlet weak private var profileButton: UIButton!
+    @IBOutlet weak private var weekButton: UIButton!
+    @IBOutlet weak var monthButton: UIButton!
     @IBOutlet weak private var yearButton: UIButton!
     @IBOutlet weak private var compatibilityButton: UIButton!
     
-    public var signProtocol: SignProtocol?
+    var currentSign: Sign?
+    
+    private lazy var service: HoroscopeService? = {
+        guard let sign = currentSign else {
+            return nil
+        }
+        return HoroscopeService(sign: sign)
+    }()
     
     // MARK: - Lifecycle
     
@@ -35,49 +41,58 @@ class SignPreviewViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction private func todayButtonAction(_ sender: UIButton) {
-        gotoNextPage(withChoice: .daily)
+        service?.getTodayHoroscope(completion: { (error, result) in
+            if let error = error {
+                print("Error: \(error)")
+            }
+            
+            if let result = result {
+                print("result: \(result)")
+            } else {
+                print("empty result")
+            }
+        })
+      //  gotoNextPage(withChoice: .daily)
     }
-    @IBAction private func profileButtonAction(_ sender: UIButton) {
+    @IBAction private func weekButtonAction(_ sender: UIButton) {
         gotoNextPage(withChoice: .profile)
+    }
+    @IBAction func monthButtonAction(_ sender: UIButton) {
     }
     @IBAction private func annualButtonAction(_ sender: UIButton) {
         gotoNextPage(withChoice: .annual)
     }
     @IBAction private func compatibilityButtonAction(_ sender: UIButton) {
-        if let signCompatibilityVC = NavigationCoordinator.getSignCompatibility() as? SignCompatibilityViewController {
-            signCompatibilityVC.signProtocol = signProtocol
-            self.navigationController?.pushViewController(signCompatibilityVC, animated: true)
-        }
+        let signCompatibilityVC = NavigationCoordinator.getSignCompatibility()
+        navigationController?.pushViewController(signCompatibilityVC, animated: true)
     }
     
     // MARK: - Setup UI
     
     private func setupUI() {
         view.backgroundColor = Colors.backgroundColor()
-        signInformationView.backgroundColor = UIColor.clear
-        actionsView.backgroundColor = UIColor.clear
         
         todayButton.backgroundColor = Colors.almostblack()
-        profileButton.backgroundColor = Colors.darkGray()
+        weekButton.backgroundColor = Colors.darkGray()
         yearButton.backgroundColor = Colors.gray()
         compatibilityButton.backgroundColor = Colors.lightGray()
     }
     
     private func setupSigns() {
-        if let signImageName = signProtocol?.getSignImage() {
-            signImageView.image = UIImage(named: signImageName)
+        signNameLabel.text = currentSign?.signName
+        signDateLabel.text = currentSign?.signDate
+        guard let signImageName = currentSign?.signImageName else {
+            return
         }
-        signNameLabel.text = signProtocol?.getSignName()
+        signImageView.image = UIImage(named: signImageName)
     }
     
     // MARK: - Navigation helper
     
     private func gotoNextPage(withChoice horoscopeChoice: HoroscopeChoice) {
-        if let webViewController = NavigationCoordinator.getSignDetailedWebView() as? SignDetailedWebViewController {
-            webViewController.signProtocol = signProtocol
-            webViewController.horoscopeChoice = horoscopeChoice
-            self.navigationController?.pushViewController(webViewController, animated: true)
-        }
+        let webViewController = NavigationCoordinator.getSignDetailedWebView()
+        webViewController.horoscopeChoice = horoscopeChoice
+        navigationController?.pushViewController(webViewController, animated: true)
     }
 
 }

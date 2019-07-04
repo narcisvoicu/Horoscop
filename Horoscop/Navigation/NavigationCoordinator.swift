@@ -18,24 +18,24 @@ class NavigationCoordinator: NSObject {
     
     // MARK: - Get view controllers
     
-    static func getSignCollectionView() -> UIViewController {
-        return getMainStoryboard().instantiateViewController(withIdentifier: "SignCollectionView")
+    static func getSignCollectionView() -> SignsCollectionViewController {
+        return getMainStoryboard().instantiateViewController(withIdentifier: "SignCollectionView") as! SignsCollectionViewController
     }
     
-    static func getSignPreview() -> UIViewController {
-        return getMainStoryboard().instantiateViewController(withIdentifier: "SignPreview")
+    static func getSignPreview() -> SignPreviewViewController {
+        return getMainStoryboard().instantiateViewController(withIdentifier: "SignPreview") as! SignPreviewViewController
     }
     
-    static func getSignCompatibility() -> UIViewController {
-        return getMainStoryboard().instantiateViewController(withIdentifier: "SignCompatibility")
+    static func getSignCompatibility() -> SignCompatibilityViewController {
+        return getMainStoryboard().instantiateViewController(withIdentifier: "SignCompatibility") as! SignCompatibilityViewController
     }
     
-    static func getSignDetailedCompatibility() -> UIViewController {
-        return getMainStoryboard().instantiateViewController(withIdentifier: "SignDetailedCompatibility")
+    static func getSignDetailedCompatibility() -> SignDetailedCompatibilityViewController {
+        return getMainStoryboard().instantiateViewController(withIdentifier: "SignDetailedCompatibility") as! SignDetailedCompatibilityViewController
     }
     
-    static func getSignDetailedWebView() -> UIViewController {
-        return getMainStoryboard().instantiateViewController(withIdentifier: "SignDetailedWebView")
+    static func getSignDetailedWebView() -> SignDetailsController {
+        return getMainStoryboard().instantiateViewController(withIdentifier: "SignDetailedWebView") as! SignDetailsController
     }
     
     static func getErrorView() -> UIViewController {

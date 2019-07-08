@@ -12,7 +12,7 @@ class SignsCollectionViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private let signFactory = SignFactory()
+    private let viewModel = SignCollectionViewModel()
     
     // MARK: - Lifecycle
     
@@ -26,7 +26,7 @@ class SignsCollectionViewController: UIViewController {
     // MARK: - Setup
     
     private func setupUI()  {
-        collectionView.backgroundColor = Colors.backgroundColor()
+        //collectionView.backgroundColor = Colors.backgroundColor()
     }
     
     private func setupCollectionView() {
@@ -40,29 +40,24 @@ class SignsCollectionViewController: UIViewController {
 
 extension SignsCollectionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let signType = SignType.allCases[indexPath.row]
-        let selectedSign = signFactory.makeSign(from: signType)
-        let signPreviewVC = NavigationCoordinator.getSignPreview()
-        signPreviewVC.currentSign = selectedSign
-        navigationController?.pushViewController(signPreviewVC, animated: true)
-//        if let signPreviewVC = NavigationCoordinator.getSignPreview() as? SignPreviewViewController {
-//            signPreviewVC.signProtocol = SignFactory.getSign(sign: selectedSign)
-//            self.navigationController?.pushViewController(signPreviewVC, animated: true)
-//        }
+        let selectedSign = viewModel.sign(at: indexPath)
+        let signPreviewViewController = NavigationCoordinator.getSignPreview()
+        let signPreviewViewModel = SignPreviewViewModel(sign: selectedSign)
+        signPreviewViewController.viewModel = signPreviewViewModel
+        navigationController?.pushViewController(signPreviewViewController, animated: true)
     }
 }
 
 extension SignsCollectionViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return SignType.allCases.count
+        return viewModel.numberOfItems()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SignCollectionViewCell.reuseIdentifier, for: indexPath) as! SignCollectionViewCell
         
-        let signType = SignType.allCases[indexPath.row]
-        let sign = signFactory.makeSign(from: signType)
-        cell.setupCellData(sign: sign)
+        let sign = viewModel.sign(at: indexPath)
+        cell.setupCell(with: sign)
 
         return cell
     }

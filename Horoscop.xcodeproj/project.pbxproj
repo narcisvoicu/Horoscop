@@ -14,26 +14,36 @@
 		6478C8601F5B2B140035D67A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6478C85F1F5B2B140035D67A /* Assets.xcassets */; };
 		6478C8631F5B2B140035D67A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6478C8611F5B2B140035D67A /* LaunchScreen.storyboard */; };
 		6490BF8D1F6430F20071CED3 /* SignPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF8C1F6430F20071CED3 /* SignPreviewViewController.swift */; };
-		6490BF901F6431390071CED3 /* SignCompatibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF8F1F6431390071CED3 /* SignCompatibilityViewController.swift */; };
 		6490BF921F64350C0071CED3 /* SignCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF911F64350C0071CED3 /* SignCollectionViewCell.swift */; };
 		6490BF951F6436500071CED3 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490BF941F6436500071CED3 /* NavigationCoordinator.swift */; };
 		8A2EF07BF980C7A773661AE0 /* Pods_Horoscop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AD48DA1CDEF473BDA13188 /* Pods_Horoscop.framework */; };
 		9B442B8C22B057DD000ED0E0 /* SignFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B442B8B22B057DD000ED0E0 /* SignFactory.swift */; };
 		9B59214B22AEF45A00A5EE9D /* Horoscope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B59214A22AEF45A00A5EE9D /* Horoscope.swift */; };
 		9B59214E22AEF78000A5EE9D /* HoroscopeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B59214D22AEF78000A5EE9D /* HoroscopeService.swift */; };
+		9B636EFA22CF45D300553204 /* SignPreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B636EF922CF45D300553204 /* SignPreviewViewModel.swift */; };
 		9BC25D0022C50B9B002F68AF /* URLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC25CFF22C50B9B002F68AF /* URLFactory.swift */; };
-		C11C0C1720F4E26D0020D834 /* SignDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11C0C1620F4E26D0020D834 /* SignDetailsController.swift */; };
+		9BF3AD9922D336BA00E76F13 /* SignCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3AD9822D336BA00E76F13 /* SignCollectionViewModel.swift */; };
+		9BF3ADA722D33F3A00E76F13 /* scorpio.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9BF3AD9B22D33F3900E76F13 /* scorpio.svg */; };
+		9BF3ADA822D33F3A00E76F13 /* aquarius.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9BF3AD9C22D33F3900E76F13 /* aquarius.svg */; };
+		9BF3ADA922D33F3A00E76F13 /* taurus.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9BF3AD9D22D33F3900E76F13 /* taurus.svg */; };
+		9BF3ADAA22D33F3A00E76F13 /* libra.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9BF3AD9E22D33F3900E76F13 /* libra.svg */; };
+		9BF3ADAB22D33F3A00E76F13 /* cancer.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9BF3AD9F22D33F3900E76F13 /* cancer.svg */; };
+		9BF3ADAC22D33F3A00E76F13 /* sagittarius.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9BF3ADA022D33F3900E76F13 /* sagittarius.svg */; };
+		9BF3ADAD22D33F3A00E76F13 /* gemini.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9BF3ADA122D33F3900E76F13 /* gemini.svg */; };
+		9BF3ADAE22D33F3A00E76F13 /* leo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9BF3ADA222D33F3A00E76F13 /* leo.svg */; };
+		9BF3ADAF22D33F3A00E76F13 /* capricorn.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9BF3ADA322D33F3A00E76F13 /* capricorn.svg */; };
+		9BF3ADB022D33F3A00E76F13 /* virgo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9BF3ADA422D33F3A00E76F13 /* virgo.svg */; };
+		9BF3ADB122D33F3A00E76F13 /* pisces.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9BF3ADA522D33F3A00E76F13 /* pisces.svg */; };
+		9BF3ADB222D33F3A00E76F13 /* aries.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9BF3ADA622D33F3A00E76F13 /* aries.svg */; };
+		C11C0C1720F4E26D0020D834 /* SignDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11C0C1620F4E26D0020D834 /* SignDetailsViewController.swift */; };
 		C11FFE2C20F761D4008DA316 /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11FFE2B20F761D4008DA316 /* StringFormatter.swift */; };
 		C11FFE2E20F79D8A008DA316 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11FFE2D20F79D8A008DA316 /* Constants.swift */; };
-		C137669621060FE100B6C68C /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C137669521060FE100B6C68C /* Networking.swift */; };
 		C137669F2106180C00B6C68C /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C137669D2106180C00B6C68C /* ErrorViewController.swift */; };
 		C13766A02106180C00B6C68C /* ErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C137669E2106180C00B6C68C /* ErrorViewController.xib */; };
-		C152CDED20FE313100012ADB /* SignDetailedCompatibilityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C152CDEC20FE313100012ADB /* SignDetailedCompatibilityPresenter.swift */; };
 		C168305820FD1E5F00DDEF71 /* SignCompatibilityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C168305720FD1E5F00DDEF71 /* SignCompatibilityTableViewCell.swift */; };
 		C16E8F39211F5A4F00B7F7DA /* HoroscopModelData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C16E8F37211F5A4F00B7F7DA /* HoroscopModelData.xcdatamodeld */; };
 		C18BA75820FDF92400A615FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C18BA75720FDF92300A615FA /* GoogleService-Info.plist */; };
-		C19A219520FE110500193223 /* SignDetailedCompatibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19A219420FE110500193223 /* SignDetailedCompatibilityViewController.swift */; };
-		C1B46F4C20FF9F9800A7441D /* SignDetailedWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B46F4B20FF9F9800A7441D /* SignDetailedWebViewPresenter.swift */; };
+		C1B46F4C20FF9F9800A7441D /* SignDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B46F4B20FF9F9800A7441D /* SignDetailsViewModel.swift */; };
 		C1BD4166200BEB5E0031BE23 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD4165200BEB5E0031BE23 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,26 +58,36 @@
 		6478C8621F5B2B140035D67A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6478C8641F5B2B140035D67A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6490BF8C1F6430F20071CED3 /* SignPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignPreviewViewController.swift; sourceTree = "<group>"; };
-		6490BF8F1F6431390071CED3 /* SignCompatibilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignCompatibilityViewController.swift; sourceTree = "<group>"; };
 		6490BF911F64350C0071CED3 /* SignCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignCollectionViewCell.swift; sourceTree = "<group>"; };
 		6490BF941F6436500071CED3 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationCoordinator.swift; path = Navigation/NavigationCoordinator.swift; sourceTree = "<group>"; };
 		7C4A97A680E019EA098A47CA /* Pods-Horoscop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Horoscop.release.xcconfig"; path = "Pods/Target Support Files/Pods-Horoscop/Pods-Horoscop.release.xcconfig"; sourceTree = "<group>"; };
 		9B442B8B22B057DD000ED0E0 /* SignFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignFactory.swift; sourceTree = "<group>"; };
 		9B59214A22AEF45A00A5EE9D /* Horoscope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Horoscope.swift; sourceTree = "<group>"; };
 		9B59214D22AEF78000A5EE9D /* HoroscopeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeService.swift; sourceTree = "<group>"; };
+		9B636EF922CF45D300553204 /* SignPreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignPreviewViewModel.swift; sourceTree = "<group>"; };
 		9BC25CFF22C50B9B002F68AF /* URLFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFactory.swift; sourceTree = "<group>"; };
-		C11C0C1620F4E26D0020D834 /* SignDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignDetailsController.swift; sourceTree = "<group>"; };
+		9BF3AD9822D336BA00E76F13 /* SignCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignCollectionViewModel.swift; sourceTree = "<group>"; };
+		9BF3AD9B22D33F3900E76F13 /* scorpio.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scorpio.svg; sourceTree = "<group>"; };
+		9BF3AD9C22D33F3900E76F13 /* aquarius.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = aquarius.svg; sourceTree = "<group>"; };
+		9BF3AD9D22D33F3900E76F13 /* taurus.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = taurus.svg; sourceTree = "<group>"; };
+		9BF3AD9E22D33F3900E76F13 /* libra.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = libra.svg; sourceTree = "<group>"; };
+		9BF3AD9F22D33F3900E76F13 /* cancer.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cancer.svg; sourceTree = "<group>"; };
+		9BF3ADA022D33F3900E76F13 /* sagittarius.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sagittarius.svg; sourceTree = "<group>"; };
+		9BF3ADA122D33F3900E76F13 /* gemini.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gemini.svg; sourceTree = "<group>"; };
+		9BF3ADA222D33F3A00E76F13 /* leo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = leo.svg; sourceTree = "<group>"; };
+		9BF3ADA322D33F3A00E76F13 /* capricorn.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = capricorn.svg; sourceTree = "<group>"; };
+		9BF3ADA422D33F3A00E76F13 /* virgo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = virgo.svg; sourceTree = "<group>"; };
+		9BF3ADA522D33F3A00E76F13 /* pisces.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pisces.svg; sourceTree = "<group>"; };
+		9BF3ADA622D33F3A00E76F13 /* aries.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = aries.svg; sourceTree = "<group>"; };
+		C11C0C1620F4E26D0020D834 /* SignDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignDetailsViewController.swift; sourceTree = "<group>"; };
 		C11FFE2B20F761D4008DA316 /* StringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
 		C11FFE2D20F79D8A008DA316 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		C137669521060FE100B6C68C /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		C137669D2106180C00B6C68C /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		C137669E2106180C00B6C68C /* ErrorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorViewController.xib; sourceTree = "<group>"; };
-		C152CDEC20FE313100012ADB /* SignDetailedCompatibilityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignDetailedCompatibilityPresenter.swift; sourceTree = "<group>"; };
 		C168305720FD1E5F00DDEF71 /* SignCompatibilityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignCompatibilityTableViewCell.swift; sourceTree = "<group>"; };
 		C16E8F38211F5A4F00B7F7DA /* HoroscopModelData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HoroscopModelData.xcdatamodel; sourceTree = "<group>"; };
 		C18BA75720FDF92300A615FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C19A219420FE110500193223 /* SignDetailedCompatibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignDetailedCompatibilityViewController.swift; sourceTree = "<group>"; };
-		C1B46F4B20FF9F9800A7441D /* SignDetailedWebViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignDetailedWebViewPresenter.swift; sourceTree = "<group>"; };
+		C1B46F4B20FF9F9800A7441D /* SignDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignDetailsViewModel.swift; sourceTree = "<group>"; };
 		C1BD4165200BEB5E0031BE23 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C7AD48DA1CDEF473BDA13188 /* Pods_Horoscop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Horoscop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -121,6 +141,7 @@
 				9B442B8E22B197EB000ED0E0 /* ViewModels */,
 				6490BF961F6436540071CED3 /* Navigation */,
 				C1BD4164200BEB480031BE23 /* Utils */,
+				9BF3AD9A22D33F2A00E76F13 /* Icons */,
 				6478C8581F5B2B140035D67A /* AppDelegate.swift */,
 				6478C85C1F5B2B140035D67A /* Main.storyboard */,
 				6478C85F1F5B2B140035D67A /* Assets.xcassets */,
@@ -170,8 +191,9 @@
 		9B442B8E22B197EB000ED0E0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				C1B46F4B20FF9F9800A7441D /* SignDetailedWebViewPresenter.swift */,
-				C152CDEC20FE313100012ADB /* SignDetailedCompatibilityPresenter.swift */,
+				9BF3AD9822D336BA00E76F13 /* SignCollectionViewModel.swift */,
+				9B636EF922CF45D300553204 /* SignPreviewViewModel.swift */,
+				C1B46F4B20FF9F9800A7441D /* SignDetailsViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -194,6 +216,25 @@
 			name = Networking;
 			sourceTree = "<group>";
 		};
+		9BF3AD9A22D33F2A00E76F13 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				9BF3AD9C22D33F3900E76F13 /* aquarius.svg */,
+				9BF3ADA622D33F3A00E76F13 /* aries.svg */,
+				9BF3AD9F22D33F3900E76F13 /* cancer.svg */,
+				9BF3ADA322D33F3A00E76F13 /* capricorn.svg */,
+				9BF3ADA122D33F3900E76F13 /* gemini.svg */,
+				9BF3ADA222D33F3A00E76F13 /* leo.svg */,
+				9BF3AD9E22D33F3900E76F13 /* libra.svg */,
+				9BF3ADA522D33F3A00E76F13 /* pisces.svg */,
+				9BF3ADA022D33F3900E76F13 /* sagittarius.svg */,
+				9BF3AD9B22D33F3900E76F13 /* scorpio.svg */,
+				9BF3AD9D22D33F3900E76F13 /* taurus.svg */,
+				9BF3ADA422D33F3A00E76F13 /* virgo.svg */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
 		C1376697210612E300B6C68C /* ErrorView */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,9 +249,7 @@
 			children = (
 				6478C85A1F5B2B140035D67A /* SignsCollectionViewController.swift */,
 				6490BF8C1F6430F20071CED3 /* SignPreviewViewController.swift */,
-				C11C0C1620F4E26D0020D834 /* SignDetailsController.swift */,
-				C19A219420FE110500193223 /* SignDetailedCompatibilityViewController.swift */,
-				6490BF8F1F6431390071CED3 /* SignCompatibilityViewController.swift */,
+				C11C0C1620F4E26D0020D834 /* SignDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -229,7 +268,6 @@
 				C1BD4165200BEB5E0031BE23 /* Colors.swift */,
 				C11FFE2B20F761D4008DA316 /* StringFormatter.swift */,
 				C11FFE2D20F79D8A008DA316 /* Constants.swift */,
-				C137669521060FE100B6C68C /* Networking.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -297,11 +335,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BF3ADB222D33F3A00E76F13 /* aries.svg in Resources */,
+				9BF3ADAE22D33F3A00E76F13 /* leo.svg in Resources */,
 				6478C8631F5B2B140035D67A /* LaunchScreen.storyboard in Resources */,
+				9BF3ADA822D33F3A00E76F13 /* aquarius.svg in Resources */,
+				9BF3ADAA22D33F3A00E76F13 /* libra.svg in Resources */,
 				C18BA75820FDF92400A615FA /* GoogleService-Info.plist in Resources */,
 				6478C8601F5B2B140035D67A /* Assets.xcassets in Resources */,
+				9BF3ADA922D33F3A00E76F13 /* taurus.svg in Resources */,
+				9BF3ADB022D33F3A00E76F13 /* virgo.svg in Resources */,
 				C13766A02106180C00B6C68C /* ErrorViewController.xib in Resources */,
+				9BF3ADAF22D33F3A00E76F13 /* capricorn.svg in Resources */,
+				9BF3ADA722D33F3A00E76F13 /* scorpio.svg in Resources */,
+				9BF3ADAB22D33F3A00E76F13 /* cancer.svg in Resources */,
+				9BF3ADAD22D33F3A00E76F13 /* gemini.svg in Resources */,
 				6478C85E1F5B2B140035D67A /* Main.storyboard in Resources */,
+				9BF3ADAC22D33F3A00E76F13 /* sagittarius.svg in Resources */,
+				9BF3ADB122D33F3A00E76F13 /* pisces.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,22 +364,22 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Horoscop/Pods-Horoscop-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Horoscop/Pods-Horoscop-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImageSVGCoder/SDWebImageSVGCoder.framework",
+				"${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImageSVGCoder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVGKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Horoscop/Pods-Horoscop-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Horoscop/Pods-Horoscop-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E71846253A4AE937D40FC8A1 /* [CP] Check Pods Manifest.lock */ = {
@@ -358,27 +408,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				6490BF8D1F6430F20071CED3 /* SignPreviewViewController.swift in Sources */,
+				9BF3AD9922D336BA00E76F13 /* SignCollectionViewModel.swift in Sources */,
 				C11FFE2C20F761D4008DA316 /* StringFormatter.swift in Sources */,
 				9B442B8C22B057DD000ED0E0 /* SignFactory.swift in Sources */,
 				C1BD4166200BEB5E0031BE23 /* Colors.swift in Sources */,
 				C137669F2106180C00B6C68C /* ErrorViewController.swift in Sources */,
 				C11FFE2E20F79D8A008DA316 /* Constants.swift in Sources */,
 				9B59214E22AEF78000A5EE9D /* HoroscopeService.swift in Sources */,
-				C137669621060FE100B6C68C /* Networking.swift in Sources */,
 				646F95D51F5C6589007687DF /* Sign.swift in Sources */,
-				C1B46F4C20FF9F9800A7441D /* SignDetailedWebViewPresenter.swift in Sources */,
+				C1B46F4C20FF9F9800A7441D /* SignDetailsViewModel.swift in Sources */,
 				6478C85B1F5B2B140035D67A /* SignsCollectionViewController.swift in Sources */,
 				6490BF921F64350C0071CED3 /* SignCollectionViewCell.swift in Sources */,
 				C16E8F39211F5A4F00B7F7DA /* HoroscopModelData.xcdatamodeld in Sources */,
-				C19A219520FE110500193223 /* SignDetailedCompatibilityViewController.swift in Sources */,
-				6490BF901F6431390071CED3 /* SignCompatibilityViewController.swift in Sources */,
 				C168305820FD1E5F00DDEF71 /* SignCompatibilityTableViewCell.swift in Sources */,
 				9B59214B22AEF45A00A5EE9D /* Horoscope.swift in Sources */,
 				6490BF951F6436500071CED3 /* NavigationCoordinator.swift in Sources */,
-				C11C0C1720F4E26D0020D834 /* SignDetailsController.swift in Sources */,
+				C11C0C1720F4E26D0020D834 /* SignDetailsViewController.swift in Sources */,
 				6478C8591F5B2B140035D67A /* AppDelegate.swift in Sources */,
+				9B636EFA22CF45D300553204 /* SignPreviewViewModel.swift in Sources */,
 				9BC25D0022C50B9B002F68AF /* URLFactory.swift in Sources */,
-				C152CDED20FE313100012ADB /* SignDetailedCompatibilityPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImageSVGCoder
 
 class SignPreviewViewController: UIViewController {
     
@@ -18,16 +19,8 @@ class SignPreviewViewController: UIViewController {
     @IBOutlet weak private var weekButton: UIButton!
     @IBOutlet weak var monthButton: UIButton!
     @IBOutlet weak private var yearButton: UIButton!
-    @IBOutlet weak private var compatibilityButton: UIButton!
     
-    var currentSign: Sign?
-    
-    private lazy var service: HoroscopeService? = {
-        guard let sign = currentSign else {
-            return nil
-        }
-        return HoroscopeService(sign: sign)
-    }()
+    var viewModel: SignPreviewViewModel?
     
     // MARK: - Lifecycle
     
@@ -41,58 +34,98 @@ class SignPreviewViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction private func todayButtonAction(_ sender: UIButton) {
-        service?.getTodayHoroscope(completion: { (error, result) in
+        viewModel?.todayPressed(completion: { (error, todayResult) in
             if let error = error {
-                print("Error: \(error)")
+                print("Error: \(error.localizedDescription)")
+                return
             }
-            
-            if let result = result {
-                print("result: \(result)")
-            } else {
-                print("empty result")
+            guard let result = todayResult else {
+                print("No error, no result")
+                return
+            }
+            DispatchQueue.main.async {
+                self.gotoNextPage(with: result)
             }
         })
-      //  gotoNextPage(withChoice: .daily)
     }
     @IBAction private func weekButtonAction(_ sender: UIButton) {
-        gotoNextPage(withChoice: .profile)
+        viewModel?.weekPressed(completion: { (error, weekResult) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                return
+            }
+            guard let result = weekResult else {
+                print("No error, no result")
+                return
+            }
+            DispatchQueue.main.async {
+                self.gotoNextPage(with: result)
+            }
+        })
     }
     @IBAction func monthButtonAction(_ sender: UIButton) {
+        viewModel?.monthPressed(completion: { (error, monthResult) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                return
+            }
+            guard let result = monthResult else {
+                print("No error, no result")
+                return
+            }
+            DispatchQueue.main.async {
+                self.gotoNextPage(with: result)
+            }
+        })
     }
     @IBAction private func annualButtonAction(_ sender: UIButton) {
-        gotoNextPage(withChoice: .annual)
-    }
-    @IBAction private func compatibilityButtonAction(_ sender: UIButton) {
-        let signCompatibilityVC = NavigationCoordinator.getSignCompatibility()
-        navigationController?.pushViewController(signCompatibilityVC, animated: true)
+        viewModel?.yearPressed(completion: { (error, yearResult) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                return
+            }
+            guard let result = yearResult else {
+                print("No error, no result")
+                return
+            }
+            DispatchQueue.main.async {
+                self.gotoNextPage(with: result)
+            }
+        })
     }
     
     // MARK: - Setup UI
     
     private func setupUI() {
-        view.backgroundColor = Colors.backgroundColor()
+        //view.backgroundColor = Colors.backgroundColor()
         
         todayButton.backgroundColor = Colors.almostblack()
         weekButton.backgroundColor = Colors.darkGray()
         yearButton.backgroundColor = Colors.gray()
-        compatibilityButton.backgroundColor = Colors.lightGray()
     }
     
     private func setupSigns() {
-        signNameLabel.text = currentSign?.signName
-        signDateLabel.text = currentSign?.signDate
-        guard let signImageName = currentSign?.signImageName else {
+        guard let viewModel = viewModel, let sign = viewModel.sign else {
             return
         }
-        signImageView.image = UIImage(named: signImageName)
+        signNameLabel.text = sign.signName
+        signDateLabel.text = sign.signDate
+        if let urlPath = Bundle.main.path(forResource: sign.signImageName, ofType: "svg") {
+            let image = SDSVGImage(contentsOfFile: urlPath)
+            signImageView.image = image
+        }
     }
     
-    // MARK: - Navigation helper
+    // MARK: - Navigation
     
-    private func gotoNextPage(withChoice horoscopeChoice: HoroscopeChoice) {
-        let webViewController = NavigationCoordinator.getSignDetailedWebView()
-        webViewController.horoscopeChoice = horoscopeChoice
-        navigationController?.pushViewController(webViewController, animated: true)
+    private func gotoNextPage(with horoscope: Horoscope) {
+        let signDetailsViewController = NavigationCoordinator.getSignDetails()
+        guard let sign = viewModel?.sign else {
+            return
+        }
+        let signDetailsViewModel = SignDetailsViewModel(horoscope: horoscope, sign: sign)
+        signDetailsViewController.viewModel = signDetailsViewModel
+        navigationController?.pushViewController(signDetailsViewController, animated: true)
     }
 
 }

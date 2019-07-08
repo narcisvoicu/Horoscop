@@ -26,16 +26,8 @@ class NavigationCoordinator: NSObject {
         return getMainStoryboard().instantiateViewController(withIdentifier: "SignPreview") as! SignPreviewViewController
     }
     
-    static func getSignCompatibility() -> SignCompatibilityViewController {
-        return getMainStoryboard().instantiateViewController(withIdentifier: "SignCompatibility") as! SignCompatibilityViewController
-    }
-    
-    static func getSignDetailedCompatibility() -> SignDetailedCompatibilityViewController {
-        return getMainStoryboard().instantiateViewController(withIdentifier: "SignDetailedCompatibility") as! SignDetailedCompatibilityViewController
-    }
-    
-    static func getSignDetailedWebView() -> SignDetailsController {
-        return getMainStoryboard().instantiateViewController(withIdentifier: "SignDetailedWebView") as! SignDetailsController
+    static func getSignDetails() -> SignDetailsViewController {
+        return getMainStoryboard().instantiateViewController(withIdentifier: "SignDetailsViewController") as! SignDetailsViewController
     }
     
     static func getErrorView() -> UIViewController {

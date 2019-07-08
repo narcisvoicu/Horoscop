@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImageSVGCoder
 
 class SignCollectionViewCell: UICollectionViewCell {
     
@@ -21,13 +22,16 @@ class SignCollectionViewCell: UICollectionViewCell {
         setupUI()
     }
     
-    public func setupCellData(sign: Sign) {
+    public func setupCell(with sign: Sign) {
         signNameLabel.text = sign.signName
-        signImageView.image = UIImage(named: sign.signImageName)
+        if let urlPath = Bundle.main.path(forResource: sign.signImageName, ofType: "svg") {
+            let image = SDSVGImage(contentsOfFile: urlPath)
+            signImageView.image = image
+        }
     }
     
     private func setupUI() {
-        signNameLabel.textColor = UIColor.white
+        signNameLabel.textColor = UIColor.black
     }
     
 }

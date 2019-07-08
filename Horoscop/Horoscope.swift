@@ -15,25 +15,30 @@ enum HoroscopeType: String {
     case year
 }
 
-struct TodayHoroscope: Decodable {
+protocol Horoscope {
+    var horoscope: String { get }
+    var sunsign: String { get }
+}
+
+struct TodayHoroscope: Decodable, Horoscope {
     let date: String
     let horoscope: String
     let sunsign: String
 }
 
-struct WeekHoroscope: Decodable {
+struct WeekHoroscope: Decodable, Horoscope {
     let week: String
     let horoscope: String
     let sunsign: String
 }
 
-struct MonthHoroscope: Decodable {
+struct MonthHoroscope: Decodable, Horoscope {
     let month: String
     let horoscope: String
     let sunsign: String
 }
 
-struct YearHoroscope: Decodable {
+struct YearHoroscope: Decodable, Horoscope {
     let year: String
     let horoscope: String
     let sunsign: String

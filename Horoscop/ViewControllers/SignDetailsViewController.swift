@@ -21,7 +21,6 @@ class SignDetailsViewController: UIViewController {
     @IBOutlet weak fileprivate var textView: UITextView!
     @IBOutlet weak fileprivate var activityIndicator: UIActivityIndicatorView!
     
-    @IBOutlet weak private var signInfoView: UIView!
     @IBOutlet weak private var signImageView: UIImageView!
     @IBOutlet weak private var signNameLabel: UILabel!
     @IBOutlet weak private var signDatesLabel: UILabel!
@@ -60,8 +59,7 @@ class SignDetailsViewController: UIViewController {
     
     private func setupUI() {
         //view.backgroundColor = Colors.backgroundColor()
-        textView.backgroundColor = UIColor.clear
-        signInfoView.backgroundColor = UIColor.clear
+        //textView.backgroundColor = UIColor.clear
         activityIndicator.color = UIColor.white
     }
     

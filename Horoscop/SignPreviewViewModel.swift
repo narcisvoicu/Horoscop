@@ -23,53 +23,12 @@ class SignPreviewViewModel {
         self.sign = sign
     }
     
-    func todayPressed(completion: @escaping (Error?, TodayHoroscope?) -> ()) {
-        service?.getTodayHoroscope(completion: { (error, result) in
-            if let error = error {
-                completion(error, nil)
-            }
-            
-            if let result = result {
-                completion(nil, result)
-            } else {
-                // TODO - take a look at this case
-                completion(nil, nil)
-            }
-        })
-    }
-    
-    func weekPressed(completion: @escaping (Error?, WeekHoroscope?) -> ()) {
-        service?.getWeekHoroscope(completion: { (error, result) in
-            if let error = error {
-                completion(error, nil)
-            }
-            
-            if let result = result {
-                completion(nil, result)
-            } else {
-                // TODO - take a look at this case
-                completion(nil, nil)
-            }
-        })
-    }
-    
-    func monthPressed(completion: @escaping (Error?, MonthHoroscope?) -> ()) {
-        service?.getMonthHoroscope(completion: { (error, result) in
-            if let error = error {
-                completion(error, nil)
-            }
-            
-            if let result = result {
-                completion(nil, result)
-            } else {
-                // TODO - take a look at this case
-                completion(nil, nil)
-            }
-        })
-    }
-    
-    func yearPressed(completion: @escaping (Error?, YearHoroscope?) -> ()) {
-        service?.getAnnualHoroscope(completion: { (error, result) in
+    func loadHoroscope<T>(horoscope: T.Type,
+                          horoscopeType: HoroscopeType,
+                          completion: @escaping (Error?, T?) -> ()) where T: Decodable {
+        let resource = ServiceResource<T>(json: horoscopeType)
+        service?.loadHoroscope(with: resource,
+                               completion: { (error, result) in
             if let error = error {
                 completion(error, nil)
             }

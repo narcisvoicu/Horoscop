@@ -34,63 +34,71 @@ class SignPreviewViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction private func todayButtonAction(_ sender: UIButton) {
-        viewModel?.todayPressed(completion: { (error, todayResult) in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-                return
-            }
-            guard let result = todayResult else {
-                print("No error, no result")
-                return
-            }
-            DispatchQueue.main.async {
-                self.gotoNextPage(with: result)
-            }
+        viewModel?.loadHoroscope(horoscope: TodayHoroscope.self,
+                                 horoscopeType: .today,
+                                 completion: { (error, todayResult) in
+                                 if let error = error {
+                                     print("Error: \(error.localizedDescription)")
+                                     return
+                                 }
+                                 guard let result = todayResult else {
+                                     print("No error, no result")
+                                     return
+                                 }
+                                 DispatchQueue.main.async {
+                                     self.gotoNextPage(with: result)
+                                 }
         })
     }
     @IBAction private func weekButtonAction(_ sender: UIButton) {
-        viewModel?.weekPressed(completion: { (error, weekResult) in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-                return
-            }
-            guard let result = weekResult else {
-                print("No error, no result")
-                return
-            }
-            DispatchQueue.main.async {
-                self.gotoNextPage(with: result)
-            }
+        viewModel?.loadHoroscope(horoscope: WeekHoroscope.self,
+                                 horoscopeType: .week,
+                                 completion: { (error, weekResult) in
+                                 if let error = error {
+                                     print("Error: \(error.localizedDescription)")
+                                     return
+                                 }
+                                 guard let result = weekResult else {
+                                     print("No error, no result")
+                                     return
+                                 }
+                                 DispatchQueue.main.async {
+                                     self.gotoNextPage(with: result)
+                                 }
         })
     }
     @IBAction func monthButtonAction(_ sender: UIButton) {
-        viewModel?.monthPressed(completion: { (error, monthResult) in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-                return
-            }
-            guard let result = monthResult else {
-                print("No error, no result")
-                return
-            }
-            DispatchQueue.main.async {
-                self.gotoNextPage(with: result)
-            }
+        viewModel?.loadHoroscope(horoscope: MonthHoroscope.self,
+                                 horoscopeType: .month,
+                                 completion: { (error, monthResult) in
+                                 if let error = error {
+                                     print("Error: \(error.localizedDescription)")
+                                     return
+                                 }
+                                 guard let result = monthResult else {
+                                     print("No error, no result")
+                                     return
+                                 }
+                                 DispatchQueue.main.async {
+                                     self.gotoNextPage(with: result)
+                                 }
         })
     }
     @IBAction private func annualButtonAction(_ sender: UIButton) {
-        viewModel?.yearPressed(completion: { (error, yearResult) in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-                return
-            }
-            guard let result = yearResult else {
-                print("No error, no result")
-                return
-            }
-            DispatchQueue.main.async {
-                self.gotoNextPage(with: result)
-            }
+        viewModel?.loadHoroscope(horoscope: YearHoroscope.self,
+                                 horoscopeType: .year,
+                                 completion: { (error, yearResult) in
+                                 if let error = error {
+                                     print("Error: \(error.localizedDescription)")
+                                     return
+                                 }
+                                 guard let result = yearResult else {
+                                     print("No error, no result")
+                                     return
+                                 }
+                                 DispatchQueue.main.async {
+                                     self.gotoNextPage(with: result)
+                                 }
         })
     }
     

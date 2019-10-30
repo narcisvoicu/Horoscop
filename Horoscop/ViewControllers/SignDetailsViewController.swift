@@ -58,8 +58,6 @@ class SignDetailsViewController: UIViewController {
     }
     
     private func setupUI() {
-        //view.backgroundColor = Colors.backgroundColor()
-        //textView.backgroundColor = UIColor.clear
         activityIndicator.color = UIColor.white
     }
     

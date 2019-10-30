@@ -8,6 +8,21 @@
 
 import Foundation
 
+struct ServiceResource<T> {
+    let horoscopeType: HoroscopeType
+    let parse: (Data) throws -> T
+}
+
+extension ServiceResource where T: Decodable {
+    // init for JSON decoding
+    init(json horoscopeType: HoroscopeType) {
+        self.horoscopeType = horoscopeType
+        self.parse = { data in
+            try JSONDecoder().decode(T.self, from: data)
+        }
+    }
+}
+
 struct HoroscopeService {
     
     private var sign: Sign
@@ -16,8 +31,9 @@ struct HoroscopeService {
         self.sign = sign
     }
     
-    mutating func getTodayHoroscope(completion: @escaping (Error?, TodayHoroscope?) -> Void) {
-        guard let url = URLFactory(horoscopeType: .today, signName: sign.signName).createURL() else {
+    func loadHoroscope<T>(with serviceResource: ServiceResource<T>,
+                          completion: @escaping (Error?, T?) -> Void) {
+        guard let url = URLFactory(horoscopeType: serviceResource.horoscopeType, signName: sign.signName).createURL() else {
             return
         }
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -32,97 +48,16 @@ struct HoroscopeService {
                 return
             }
             
-            if let horoscope = try? JSONDecoder().decode(TodayHoroscope.self, from: data) {
+            if let horoscope = try? serviceResource.parse(data) {
                 completion(nil, horoscope)
             } else {
                 completion(nil, nil)
             }
-            
         }
         
         task.resume()
     }
     
-    mutating func getWeekHoroscope(completion: @escaping (Error?, WeekHoroscope?) -> Void) {
-        guard let url = URLFactory(horoscopeType: .week, signName: sign.signName).createURL() else {
-            return
-        }
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            
-            if let error = error {
-                completion(error, nil)
-                return
-            }
-            
-            guard let data = data else {
-                completion(ServiceError.generic, nil)
-                return
-            }
-            
-            if let horoscope = try? JSONDecoder().decode(WeekHoroscope.self, from: data) {
-                completion(nil, horoscope)
-            } else {
-                completion(nil, nil)
-            }
-            
-        }
-        
-        task.resume()
-    }
-    
-    mutating func getMonthHoroscope(completion: @escaping (Error?, MonthHoroscope?) -> Void) {
-        guard let url = URLFactory(horoscopeType: .month, signName: sign.signName).createURL() else {
-            return
-        }
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            
-            if let error = error {
-                completion(error, nil)
-                return
-            }
-            
-            guard let data = data else {
-                completion(ServiceError.generic, nil)
-                return
-            }
-            
-            if let horoscope = try? JSONDecoder().decode(MonthHoroscope.self, from: data) {
-                completion(nil, horoscope)
-            } else {
-                completion(nil, nil)
-            }
-            
-        }
-        
-        task.resume()
-    }
-    
-    mutating func getAnnualHoroscope(completion: @escaping (Error?, YearHoroscope?) -> Void) {
-        guard let url = URLFactory(horoscopeType: .year, signName: sign.signName).createURL() else {
-            return
-        }
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            
-            if let error = error {
-                completion(error, nil)
-                return
-            }
-            
-            guard let data = data else {
-                completion(ServiceError.generic, nil)
-                return
-            }
-            
-            if let horoscope = try? JSONDecoder().decode(YearHoroscope .self, from: data) {
-                completion(nil, horoscope)
-            } else {
-                completion(nil, nil)
-            }
-            
-        }
-        
-        task.resume()
-    }
     
     enum ServiceError: Error {
         case generic
